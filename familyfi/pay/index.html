@@ -88,7 +88,6 @@
       <div class="amt" id="p-amt">₹999</div>
       <div class="qr"><img id="p-qr" src="/img/pay/qr-999.png" alt="UPI QR code for ₹999" width="520" height="520"></div>
       <div class="payee">Paying to <b>SUNILKUMAR KHEMABHAI PANCHAL</b><br>Nisnil AI-Finance Solutions</div>
-      <div class="upi-row"><span class="upi-id" id="upi">9825883499@upi</span><button class="mini" type="button" id="copy-upi">Copy UPI ID</button></div>
       <a class="btn btn-upi only-mobile" id="p-link" href="#">Open my UPI app to pay</a>
     </div>
     <div class="steps-side">
@@ -128,10 +127,6 @@ function pick(id){
   try { history.replaceState(null, '', '?plan=' + id); } catch (e) {}
 }
 document.querySelectorAll('.pick').forEach(function(b){ b.addEventListener('click', function(){ pick(b.dataset.plan); }); });
-document.getElementById('copy-upi').addEventListener('click', function(){
-  var b = this, t = document.getElementById('upi').textContent;
-  if (navigator.clipboard) navigator.clipboard.writeText(t).then(function(){ b.textContent = 'Copied ✓'; setTimeout(function(){ b.textContent = 'Copy UPI ID'; }, 1600); }, function(){});
-});
 pick((new URLSearchParams(location.search).get('plan') || 'yearly').toLowerCase());
 </script>
 </body>
