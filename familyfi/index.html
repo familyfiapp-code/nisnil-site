@@ -21,7 +21,7 @@ const SITE = {
   APP_URL:  'https://script.google.com/macros/s/AKfycbz7QWr2tY0U8C4ZwzAVWkUxsS2RkY4jKyx1ifZZ-2qGwbQVL1vj0bhk_Xmzb56nEWcbYw/exec',   // ← your online app link: https://script.google.com/macros/s/XXXX/exec  (Deploy → Manage deployments → Web app URL)
   WHATSAPP: '',   // ← business WhatsApp number with country code, digits only, e.g. '919800000000' (optional)
   EMAIL:    'familyfi.app@gmail.com',
-  BUY: { yearly: '', monthly: '', offline: '' },   // ← Razorpay payment-page links (optional; empty = "Buy" asks by email/WhatsApp)
+  BUY: { yearly: '/familyfi/pay/?plan=yearly', monthly: '/familyfi/pay/?plan=monthly', offline: '/familyfi/pay/?plan=offline' },   // ← Razorpay payment-page links (optional; empty = "Buy" asks by email/WhatsApp)
   OFFER_ENDS: '2026-12-31T23:59:59+05:30',
   PRICES: { yearly: [1499, 999], monthly: [149, 99], offline: [999, 699] }   // [regular, launch offer]
 };
