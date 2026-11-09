@@ -14,7 +14,7 @@
 .pay-hero{padding-block:40px 8px}
 .pay-hero h1{font-size:clamp(30px,5.4vw,46px);margin-top:14px}
 .pay-hero p{color:var(--ink-2);margin-top:12px;max-width:40em;font-size:17px}
-.plans-pick{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:28px 0 22px}
+.plans-pick{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:28px 0 22px}
 .pick{appearance:none;text-align:left;cursor:pointer;background:var(--card);border:1.5px solid var(--line);border-radius:18px;padding:16px 18px;font:inherit;color:inherit;transition:border-color .15s,box-shadow .15s}
 .pick:hover{border-color:#bfb4a0}
 .pick[aria-pressed="true"]{border-color:var(--green);box-shadow:0 0 0 3px rgba(14,90,79,.14)}
@@ -70,7 +70,6 @@
   <div class="plans-pick" role="group" aria-label="Choose a plan">
     <button class="pick" type="button" data-plan="yearly"><small>Online · Yearly</small><b>₹999<s>₹1,499</s></b><span>Phone + laptop, live prices, all updates</span></button>
     <button class="pick" type="button" data-plan="monthly"><small>Online · Monthly</small><b>₹99<s>₹149</s></b><span>Same features, pay each month</span></button>
-    <button class="pick" type="button" data-plan="offline"><small>Offline · Lifetime</small><b>₹699<s>₹999</s></b><span>One file on your computer, pay once</span></button>
   </div>
 
   <section class="paybox" aria-live="polite">
@@ -96,9 +95,9 @@
 
   <div class="note"><b>Need help?</b> Email <b>familyfi.app@gmail.com</b> with your Gmail and the Razorpay payment ID from your receipt. The 15-day free trial needs no payment — just <a href="/familyfi/#plans">start the trial</a>. Launch prices are valid till 31 Dec 2026. Refunds follow our <a href="/refund/">refund policy</a>.</div>
 </main>
-<footer class="site-foot"><div class="wrap"><div class="grid"><div class="brand"><b>nisnil</b>Nisnil AI-Finance Solutions builds simple, private finance software for Indian households. Ahmedabad, Gujarat, India.</div><div><h4>Products</h4><ul><li><a href="/familyfi/">FamilyFi – Family Finance Planner</a></li><li><a href="/familyfi/#plans">Pricing &amp; free trial</a></li><li><a href="/familyfi/#manual">User manual</a></li></ul></div><div><h4>Policies</h4><ul><li><a href="/terms/">Terms of use (online subscription)</a></li><li><a href="/terms-offline/">Terms of use (offline lifetime)</a></li><li><a href="/privacy/">Privacy policy</a></li><li><a href="/refund/">Refund policy</a></li><li><a href="/disclaimer/">Disclaimer</a></li></ul></div></div><div class="base"><span>© 2026 Nisnil AI-Finance Solutions · Sunil Panchal</span><span>familyfi.app@gmail.com · <a href="https://www.instagram.com/familyfi.app/" target="_blank" rel="noopener">@familyfi.app</a></span></div></div></footer>
+<footer class="site-foot"><div class="wrap"><div class="grid"><div class="brand"><b>nisnil</b>Nisnil AI-Finance Solutions builds simple, private finance software for Indian households. Ahmedabad, Gujarat, India.</div><div><h4>Products</h4><ul><li><a href="/familyfi/">FamilyFi – Family Finance Planner</a></li><li><a href="/familyfi/#plans">Pricing &amp; free trial</a></li><li><a href="/familyfi/#manual">User manual</a></li></ul></div><div><h4>Policies</h4><ul><li><a href="/terms/">Terms of use (online subscription)</a></li><li><a href="/privacy/">Privacy policy</a></li><li><a href="/refund/">Refund policy</a></li><li><a href="/disclaimer/">Disclaimer</a></li></ul></div></div><div class="base"><span>© 2026 Nisnil AI-Finance Solutions · Sunil Panchal</span><span>familyfi.app@gmail.com · <a href="https://www.instagram.com/familyfi.app/" target="_blank" rel="noopener">@familyfi.app</a></span></div></div></footer>
 <script>
-var PLANS = {"yearly": {"name": "Online · Yearly", "amount": 999, "was": 1499, "link": "https://rzp.io/rzp/familyfi-yearly", "feat": ["Phone and laptop, same data everywhere", "Live mutual fund NAVs and share prices", "Saved in your own Google Drive, daily backups", "365 days access, all updates"]}, "monthly": {"name": "Online · Monthly", "amount": 99, "was": 149, "link": "https://rzp.io/rzp/familyfi-monthly", "feat": ["Phone and laptop, same data everywhere", "Live mutual fund NAVs and share prices", "Saved in your own Google Drive, daily backups", "30 days access, renew any time"]}, "offline": {"name": "Offline · Lifetime", "amount": 699, "was": 999, "link": "https://rzp.io/rzp/familyfi-offline", "feat": ["One file on your computer, works without internet", "Pay once, use this version for life", "Licensed to your name, delivered by email"]}};
+var PLANS = {"yearly": {"name": "Online · Yearly", "amount": 999, "was": 1499, "link": "https://rzp.io/rzp/familyfi-yearly", "feat": ["Phone and laptop, same data everywhere", "Live mutual fund NAVs and share prices", "Saved in your own Google Drive, daily backups", "365 days access, all updates"]}, "monthly": {"name": "Online · Monthly", "amount": 99, "was": 149, "link": "https://rzp.io/rzp/familyfi-monthly", "feat": ["Phone and laptop, same data everywhere", "Live mutual fund NAVs and share prices", "Saved in your own Google Drive, daily backups", "30 days access, renew any time"]}};
 function pick(id){
   id = PLANS[id] ? id : 'yearly'; var p = PLANS[id];
   document.querySelectorAll('.pick').forEach(function(b){ b.setAttribute('aria-pressed', b.dataset.plan === id ? 'true' : 'false'); });
@@ -110,8 +109,6 @@ function pick(id){
   var a = document.getElementById('p-pay');
   if (p.link) { a.href = p.link; a.removeAttribute('aria-disabled'); a.firstChild.textContent = 'Pay ₹' + p.amount.toLocaleString('en-IN') + ' securely '; }
   else { a.href = 'mailto:familyfi.app@gmail.com?subject=' + encodeURIComponent('FamilyFi ' + p.name + ' – payment link'); a.firstChild.textContent = 'Payment link coming soon – email us '; }
-  document.getElementById('p-act').textContent = id === 'offline' ? 'Your licensed offline file is emailed to you within 24 hours.' : 'Your online plan is switched on within 24 hours and we email you a confirmation.';
-  document.getElementById('p-mail').textContent = id === 'offline' ? 'We email your licensed offline file to this address, so please type it carefully.' : 'Your plan is switched on for that exact Gmail, so please type it carefully.';
   try { history.replaceState(null, '', '?plan=' + id); } catch (e) {}
 }
 document.querySelectorAll('.pick').forEach(function(b){ b.addEventListener('click', function(){ pick(b.dataset.plan); }); });

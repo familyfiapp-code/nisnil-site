@@ -20,9 +20,9 @@
 const SITE = {
   APP_URL: 'https://nisnil.co.in/app/',
   EMAIL: 'familyfi.app@gmail.com',
-  BUY: { yearly: '/familyfi/pay/?plan=yearly', monthly: '/familyfi/pay/?plan=monthly', offline: '/familyfi/pay/?plan=offline' },
+  BUY: { yearly: '/familyfi/pay/?plan=yearly', monthly: '/familyfi/pay/?plan=monthly' },
   OFFER_ENDS: '2026-12-31T23:59:59+05:30',
-  PRICES: { yearly: [1499, 999], monthly: [149, 99], offline: [999, 699] }   // [regular, launch offer]
+  PRICES: { yearly: [1499, 999], monthly: [149, 99] }   // [regular, launch offer]
 };
 /* ====================================================================== */
 </script>
@@ -95,7 +95,7 @@ h2.big{font-size:clamp(32px,5.4vw,54px)}
 @media (max-width:440px){.pts{gap:14px}.pts span{font-size:13.5px}}
 
 /* pricing */
-.plans{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:36px;text-align:left}
+.plans{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:36px;text-align:left;max-width:780px;margin-inline:auto}
 .plan{position:relative;background:var(--card);border:1px solid var(--line);border-radius:26px;padding:26px;display:flex;flex-direction:column;gap:6px}
 .plan.best{border:2px solid var(--green);box-shadow:var(--shadow)}
 .plan .tag{position:absolute;top:-12px;left:22px;background:var(--green);color:#fff;font:700 11.5px Inter,sans-serif;border-radius:999px;padding:4px 12px}
@@ -280,10 +280,6 @@ dialog.sheet::backdrop{background:rgba(19,35,31,.5);backdrop-filter:blur(4px);-w
       <div class="price"><b data-p="monthly">₹99</b><s data-r="monthly">₹149</s><small>/ month</small></div><div class="save" data-s="monthly"></div>
       <ul><li>Everything in Yearly</li><li>Stop any time</li><li>Switch to yearly later</li></ul>
       <a class="btn btn-sec" data-go="trial" href="#">Start free trial</a><div class="alt"><a href="#" data-go="buy:monthly">Buy monthly</a></div></div>
-    <div class="plan"><h3>Offline · Lifetime</h3><div class="for">One file on your computer</div>
-      <div class="price"><b data-p="offline">₹699</b><s data-r="offline">₹999</s><small>once</small></div><div class="save" data-s="offline"></div>
-      <ul><li>Pay once, use this version for life</li><li>Works without internet</li><li class="no">You type fund and share prices</li></ul>
-      <a class="btn btn-sec" data-go="buy:offline" href="#">Buy offline edition</a><div class="alt">Licensed to your name, sent by email</div></div>
   </div>
   <p class="offer" id="offerBar">Launch prices end in <b id="cd">—</b></p>
 </div></section>
@@ -303,7 +299,7 @@ dialog.sheet::backdrop{background:rgba(19,35,31,.5);backdrop-filter:blur(4px);-w
   <div class="ctas"><a class="btn btn-pri" data-go="trial" href="#plans">Start free trial</a><a class="lnk" href="#plans">See pricing <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a></div>
 </div></section>
 </main>
-<footer class="site-foot"><div class="wrap"><div class="grid"><div class="brand"><b>nisnil</b>Nisnil AI-Finance Solutions builds simple, private finance software for Indian households. Ahmedabad, Gujarat, India.</div><div><h4>Products</h4><ul><li><a href="/familyfi/">FamilyFi – Family Finance Planner</a></li><li><a href="/familyfi/#plans">Pricing &amp; free trial</a></li><li><a href="/familyfi/#manual">User manual</a></li></ul></div><div><h4>Policies</h4><ul><li><a href="/terms/">Terms of use (online subscription)</a></li><li><a href="/terms-offline/">Terms of use (offline lifetime)</a></li><li><a href="/privacy/">Privacy policy</a></li><li><a href="/refund/">Refund policy</a></li><li><a href="/disclaimer/">Disclaimer</a></li></ul></div></div><div class="base"><span>© 2026 Nisnil AI-Finance Solutions · Sunil Panchal</span><span>familyfi.app@gmail.com · <a href="https://www.instagram.com/familyfi.app/" target="_blank" rel="noopener">@familyfi.app</a></span></div></div></footer>
+<footer class="site-foot"><div class="wrap"><div class="grid"><div class="brand"><b>nisnil</b>Nisnil AI-Finance Solutions builds simple, private finance software for Indian households. Ahmedabad, Gujarat, India.</div><div><h4>Products</h4><ul><li><a href="/familyfi/">FamilyFi – Family Finance Planner</a></li><li><a href="/familyfi/#plans">Pricing &amp; free trial</a></li><li><a href="/familyfi/#manual">User manual</a></li></ul></div><div><h4>Policies</h4><ul><li><a href="/terms/">Terms of use (online subscription)</a></li><li><a href="/privacy/">Privacy policy</a></li><li><a href="/refund/">Refund policy</a></li><li><a href="/disclaimer/">Disclaimer</a></li></ul></div></div><div class="base"><span>© 2026 Nisnil AI-Finance Solutions · Sunil Panchal</span><span>familyfi.app@gmail.com · <a href="https://www.instagram.com/familyfi.app/" target="_blank" rel="noopener">@familyfi.app</a></span></div></div></footer>
 <div class="sticky" id="sticky"><a class="btn btn-pri" data-go="trial" href="#plans">Start 15-day free trial</a></div>
 
 <!-- ============ pop-up panels ============ -->
@@ -315,22 +311,13 @@ dialog.sheet::backdrop{background:rgba(19,35,31,.5);backdrop-filter:blur(4px);-w
 <dialog class="sheet" id="dlg-start" aria-labelledby="s-title">
   <div class="sh-head"><h2 id="s-title">Quick start</h2><button class="x" type="button" data-close aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
   <div class="sh-body">
-    <div class="seg" role="tablist" aria-label="Edition"><button role="tab" aria-selected="true" data-t="online">Online edition</button><button role="tab" aria-selected="false" data-t="offline">Offline edition</button></div>
     <ol class="qs" data-g="online">
       <li><b>Open the planner</b><span>Tap <b>Start free trial</b>. It opens in Chrome, Edge or Safari on your phone or laptop.</span></li>
-      <li><b>Sign in with Gmail and allow access</b><span>If Google shows “This app isn’t verified”, tap <b>Advanced → Go to Family Finance Planner → Allow</b>. It only uses its own folder in your Drive.</span></li>
+      <li><b>Continue with Google</b><span>Choose your Gmail and allow FamilyFi to save <b>its own files</b> in your Drive. It cannot see any other file.</span></li>
       <li><b>Create your planner</b><span>Add a planner name, family members, bank accounts, cards and cash, then tap <b>Create my planner</b>. Want to look first? Choose <b>Explore with sample data</b>.</span></li>
       <li><b>Add the last 4 digits of each account</b><span>So bank SMS and statements find the right account. <span class="path">My accounts › edit account</span></span></li>
       <li><b>Import your first statement</b><span>Excel, CSV or PDF. Check the column matching once; it is remembered.</span></li>
       <li><b>Add it to your home screen</b><span>Browser menu → <b>Add to Home screen</b>, so it opens like an app.</span></li>
-    </ol>
-    <ol class="qs" data-g="offline" hidden>
-      <li><b>Download the file from your email</b><span>Save it in a folder that is backed up (OneDrive, Google Drive or iCloud folder).</span></li>
-      <li><b>Open it in Chrome or Edge</b><span>Double-click the file. It works without internet.</span></li>
-      <li><b>Create your planner</b><span>Add family members, accounts, cards and cash, then tap <b>Create my planner</b>.</span></li>
-      <li><b>Save into the same file</b><span>Press <b>Save</b> or <span class="kbd">Ctrl + S</span>. The first time, choose the same file to overwrite it.</span></li>
-      <li><b>Turn on automatic backups</b><span>Every Save also writes a dated copy. <span class="path">Accounts &amp; categories › Your file &amp; backup</span></span></li>
-      <li><b>Import your first statement</b><span>Excel, CSV or PDF. In the offline edition you type fund and share prices yourself.</span></li>
     </ol>
     <div class="note">Never type passwords, PINs, OTPs, CVV or full card numbers into the planner. It needs only the last 4 digits.</div>
     <p><button class="lnk" type="button" data-open="manual">Read the full user manual <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button></p>
@@ -346,18 +333,16 @@ dialog.sheet::backdrop{background:rgba(19,35,31,.5);backdrop-filter:blur(4px);-w
     </div>
     <div class="acc">
       <details id="m1" open><summary><span class="n">1</span>Before you start</summary><div class="in"><ul>
-        <li><b>Online edition:</b> a Gmail account, and Chrome, Edge or Safari on phone or laptop.</li>
-        <li><b>Offline edition:</b> a Windows or Mac computer with Chrome or Edge. No internet needed after you receive the file.</li>
+        <li>A Gmail account, and Chrome, Edge or Safari on your phone or laptop.</li>
         <li>Keep ready: your bank accounts, credit cards and cash wallets, with the <b>last 4 digits</b> of each, and one recent statement per account.</li>
         <li>Optional: your mutual fund CAS statement, loan statement and insurance policy details.</li></ul>
         <div class="note">The planner never needs passwords, PINs, OTPs, CVV or full card numbers.</div></div></details>
       <details id="m2"><summary><span class="n">2</span>Sign in and start your free trial</summary><div class="in"><ol>
-        <li>Tap <b>Start 15-day free trial</b>. The planner opens in a new tab.</li>
-        <li>Sign in with your Gmail. Use the same Gmail later when you pay, so your plan attaches to your data.</li>
-        <li>If Google shows <b>“Google hasn’t verified this app”</b>, tap <b>Advanced → Go to Family Finance Planner → Allow</b>.</li>
+        <li>Tap <b>Start 15-day free trial</b>. The planner opens at <b>familyfi.app.nisnil.co.in</b>.</li>
+        <li>Tap <b>Continue with Google</b> and choose your Gmail. Use the same Gmail later when you pay, so your plan attaches to your data.</li>
+        <li>Google asks once to let FamilyFi save <b>its own files</b> in your Drive. Tap <b>Continue</b>. FamilyFi cannot see your other files.</li>
         <li>Your trial end date shows at the bottom of every page. Seven days before it ends, a reminder with renewal links appears.</li>
-        <li>On your phone, tap <b>Add to Home screen</b> in the browser menu.</li></ol>
-        <p style="color:var(--muted)">Offline edition? Download the file from your email, save it in a backed-up folder, and double-click it to open in Chrome or Edge.</p></div></details>
+        <li>On your phone, tap <b>Add to Home screen</b> in the browser menu.</li></ol></div></details>
       <details id="m3"><summary><span class="n">3</span>Set up your planner (5 minutes, once)</summary><div class="in"><ol>
         <li>Type a planner name, for example <i>Sharma Family</i>, and add family members.</li>
         <li>Add each bank account, credit card and cash wallet with its opening balance.</li>
@@ -401,13 +386,12 @@ dialog.sheet::backdrop{background:rgba(19,35,31,.5);backdrop-filter:blur(4px);-w
         <li>It asks for the passphrase each time and locks after 15 minutes idle. Forgot it? Use the recovery code.</li></ol>
         <div class="note">Nobody, including us, can open your data without the passphrase or recovery code.</div></div></details>
       <details id="m9"><summary><span class="n">9</span>Backups</summary><div class="in"><ul>
-        <li><b>Online:</b> every change saves to your Drive within seconds; daily backups are kept for 30 days. <span class="path">Accounts &amp; categories › Backup</span> to back up now, restore or export to Excel.</li>
-        <li><b>Offline:</b> press <b>Save</b> or <span class="kbd">Ctrl + S</span>. Set a backup folder and every Save writes a dated copy (last 30 kept).</li>
+        <li>Every change saves to your Drive within seconds; daily backups are kept for 30 days. <span class="path">Accounts &amp; categories › Backup</span> to back up now, restore or export to Excel.</li>
         <li>Good habit: export an Excel copy once a month.</li></ul></div></details>
       <details id="m10"><summary><span class="n">10</span>Plans, renewal and family use</summary><div class="in"><ul>
         <li>Choose Monthly or Yearly before the trial ends and pay with the same Gmail. Renewing early never loses days.</li>
         <li>If a plan ends, your data stays safe in your Drive and opens again when you renew.</li>
-        <li><b>Spouse or family:</b> online, open the link on any device signed in to the same Google account. Offline, keep the file in a shared cloud folder and use one computer at a time.</li>
+        <li><b>Spouse or family:</b> open familyfi.app.nisnil.co.in on any device and sign in with the same Google account.</li>
         <li>“<b>Changed on another device</b>”: tap <b>Reload latest</b>.</li></ul></div></details>
       <details id="m11"><summary><span class="n">11</span>Your first-week checklist</summary><div class="in"><ul class="check">
         <li>Day 1 · Create the planner and add all accounts with last 4 digits</li>
@@ -426,13 +410,12 @@ dialog.sheet::backdrop{background:rgba(19,35,31,.5);backdrop-filter:blur(4px);-w
 <dialog class="sheet" id="dlg-faq" aria-labelledby="q-title">
   <div class="sh-head"><h2 id="q-title">Questions families ask</h2><button class="x" type="button" data-close aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
   <div class="sh-body"><div class="acc">
-    <details open><summary>Is my financial data safe?</summary><div class="in">Your data is saved only in your own Google Drive (online) or your own file (offline). We cannot open it. You can also lock it with a passphrase (AES-256).</div></details>
+    <details open><summary>Is my financial data safe?</summary><div class="in">Your data is saved only in your own Google Drive. We cannot open it. You can also lock it with a passphrase (AES-256).</div></details>
     <details><summary>Do I have to connect my bank account?</summary><div class="in">No. You never share bank passwords. You import statements (Excel, CSV, PDF) or paste bank SMS yourself.</div></details>
-    <details><summary>Google says “This app isn’t verified”. Is that OK?</summary><div class="in">Yes. New apps show this until Google’s review is complete. Tap <b>Advanced → Go to Family Finance Planner</b>. The app only creates and uses its own folder in your Drive.</div></details>
-    <details><summary>Does it work on my phone?</summary><div class="in">Yes. The online edition works in any phone or laptop browser, with the same data everywhere. Use “Add to Home screen” to open it like an app.</div></details>
+    <details><summary>What does the Google permission allow?</summary><div class="in">Only files FamilyFi creates in your Drive (its data file, backups and documents you upload). It cannot see, open or change any other file in your Drive.</div></details>
+    <details><summary>Does it work on my phone?</summary><div class="in">Yes. FamilyFi works in any phone or laptop browser, with the same data everywhere. Use “Add to Home screen” to open it like an app.</div></details>
     <details><summary>What happens after the 15-day trial?</summary><div class="in">Choose Monthly or Yearly to continue. If you don’t, the app pauses and your data stays safely in your Drive for when you come back.</div></details>
     <details><summary>Can my spouse use it too?</summary><div class="in">Yes. The planner is built for the whole family: members, their policies, investments and accounts. One plan covers one Google account; use the same login on your spouse’s phone, or ask us about a second account.</div></details>
-    <details><summary>Online or offline: what’s the difference?</summary><div class="in">Online: phone + laptop, live NAVs and share prices, all updates. Offline: one file on your computer, no internet, you type prices yourself, lifetime use of that version.</div></details>
     <details><summary>How do I pay?</summary><div class="in">Securely through Razorpay: UPI, cards, net banking or wallets. Use the Gmail you use for FamilyFi. See <a href="/refund/">refund policy</a>.</div></details>
     <details><summary>Is this investment advice?</summary><div class="in">No. The planner organises and calculates your own information. It does not recommend products, returns or tax decisions.</div></details>
   </div></div>
