@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>FamilyFi Lite – your personal money app</title>
+<meta name="description" content="FamilyFi Lite: add spending in seconds, paste a bank SMS, keep to a budget and grow savings goals. Phone app, data in your own Google Drive. 15-day free trial, then ₹49 a month.">
+<meta name="theme-color" content="#f7f4ee">
+<link rel="canonical" href="https://nisnil.co.in/familyfi-lite/">
+<meta property="og:url" content="https://nisnil.co.in/familyfi-lite/">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://nisnil.co.in/img/lite_home.jpg">
+<meta property="og:title" content="FamilyFi Lite – your money, simple">
+<meta property="og:description" content="A phone app for one person: spending, budget and savings goals. Data in your own Google Drive. 15 days free, then ₹49 a month.">
+<link rel="icon" href="/img/nisnil.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="/assets/site.css?v=ce940e37">
+<script>
+/* ===================== EDIT HERE (owner settings) ===================== */
+const SITE = {
+  APP_URL: 'https://familyfi.lite.nisnil.co.in/',
+  BUY: { yearly: 'https://rzp.io/rzp/familyfi-lite-yearly', monthly: 'https://rzp.io/rzp/familyfi-lite-monthly' },
+  EMAIL: 'familyfi.app@gmail.com'
+};
+/* ====================================================================== */
+</script>
+<style>
+section{padding-block:clamp(56px,9vw,96px);scroll-margin-top:118px}
+.center{text-align:center}
+.lede{color:var(--ink-2);font-size:clamp(17px,2.2vw,21px);max-width:34em;margin:16px auto 0}
+h2.big{font-size:clamp(32px,5.4vw,54px)}
+
+/* product sub-nav (Apple-style second bar) */
+.subnav{position:sticky;top:66px;z-index:15;background:rgba(247,244,238,.86);backdrop-filter:saturate(1.4) blur(12px);-webkit-backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid var(--line)}
+.subnav .wrap{display:flex;align-items:center;gap:8px;height:52px}
+.subnav .pname{font:600 19px/1 Fraunces,Georgia,serif;color:var(--ink);text-decoration:none;margin-right:auto}
+.subnav a.l{font:500 14px Inter,sans-serif;color:var(--ink-2);text-decoration:none;padding:6px 10px;border-radius:8px;background:none;border:0;cursor:pointer}
+.subnav a.l:hover{color:var(--green)}
+.subnav .btn{min-height:34px;padding:0 14px;font-size:13.5px}
+@media (max-width:640px){.subnav a.l{display:none}}
+
+/* hero */
+.hero{padding-block:clamp(40px,7vw,72px) 0;text-align:center;overflow:hidden}
+.pill{display:inline-flex;align-items:center;gap:8px;background:var(--saffron-2);border:1px solid #f0d9ae;color:#7a4b06;border-radius:999px;padding:6px 14px;font:600 13px Inter,sans-serif}
+.hero h1{font-size:clamp(40px,8vw,84px);line-height:1.02;margin:18px auto 0;max-width:12em}
+.hero h1 em{font-style:italic;color:var(--green)}
+.ctas{display:flex;gap:12px 20px;flex-wrap:wrap;justify-content:center;align-items:center;margin-top:28px}
+.lnk{font:600 16px Inter,sans-serif;color:var(--green);text-decoration:none;display:inline-flex;align-items:center;gap:6px;background:none;border:0;cursor:pointer;padding:6px 2px}
+.lnk svg{width:16px;height:16px}
+.lnk:hover{text-decoration:underline}
+.hnote{color:var(--muted);font-size:14px;margin-top:14px}
+.stage{position:relative;margin-top:44px;display:flex;justify-content:center}
+.stage:before{content:"";position:absolute;left:50%;bottom:0;width:100vw;height:34%;transform:translateX(-50%);background:var(--green);border-radius:50% 50% 0 0/60px 60px 0 0}
+.hero{overflow-x:clip}.stage{padding-bottom:36px}
+.hero{position:relative;z-index:2}.phone{position:relative;width:min(290px,70vw);border-radius:44px;background:#13231f;padding:11px;box-shadow:0 40px 80px -30px rgba(0,0,0,.45);margin-bottom:0}
+.phone img{border-radius:34px;width:100%}
+.facts{background:var(--green);color:#dfece7;padding-block:72px 40px}
+.facts ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:18px;text-align:center}
+.facts b{display:block;font:600 clamp(22px,3vw,30px)/1.1 Fraunces,Georgia,serif;color:#fff}
+.facts span{font-size:14px;color:#bcd5cd}
+@media (max-width:700px){.facts ul{grid-template-columns:1fr 1fr;gap:22px 14px}}
+
+/* highlights rail */
+.headrow{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.arrows{display:flex;gap:8px}
+.arrows button{width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;display:grid;place-items:center}
+.arrows button:hover{border-color:var(--green)}
+.arrows svg{width:18px;height:18px}
+@media (max-width:640px){.arrows{display:none}}
+.rail{display:grid;grid-auto-flow:column;grid-auto-columns:min(330px,84%);gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;margin-top:28px;padding:4px 2px 18px;scrollbar-width:none;overscroll-behavior-x:contain}
+.rail::-webkit-scrollbar{display:none}
+.card{scroll-snap-align:start;position:relative;background:var(--card);border:1px solid var(--line);border-radius:28px;padding:24px 24px 0;display:flex;flex-direction:column;min-height:440px;overflow:hidden;box-shadow:var(--shadow);min-width:0}
+.card small{font:600 12px Inter,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--green)}
+.card h3{font-size:25px;margin-top:8px}
+.card .pic{margin-top:auto;padding-top:20px}
+.card .pic img{border-radius:14px 14px 0 0;border:1px solid var(--line);border-bottom:0;width:100%;height:220px;object-fit:cover;object-position:top left;background:#fff}
+.card .pic.fit img{object-fit:contain;background:#fff;padding:14px 8px}
+.plus{position:absolute;right:16px;bottom:16px;width:40px;height:40px;border-radius:50%;border:0;background:var(--ink);color:#fff;display:grid;place-items:center;cursor:pointer;box-shadow:0 6px 16px rgba(19,35,31,.25)}
+.plus svg{width:18px;height:18px}
+.plus:hover{background:var(--green)}
+.new{display:inline-block;background:var(--saffron);color:#3d2604;font:700 10.5px Inter,sans-serif;letter-spacing:.06em;border-radius:999px;padding:2px 8px;margin-left:6px;vertical-align:2px}
+.card .more{display:none}
+
+/* privacy */
+.priv{background:var(--green-2);color:#dfece7;border-radius:36px;padding:clamp(32px,6vw,64px)}
+.priv h2{color:#fff}
+.priv .lede{color:#bcd5cd;margin-left:0}
+.pts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin-top:36px}
+.pts div{border-top:1px solid rgba(255,255,255,.18);padding-top:16px}
+.pts svg{width:24px;height:24px;color:#f3d39c}
+.pts b{display:block;color:#fff;margin-top:10px;font-size:16px}
+.pts span{font-size:14.5px;color:#bcd5cd}
+@media (max-width:820px){.pts{grid-template-columns:1fr 1fr}}
+@media (max-width:440px){.pts{gap:14px}.pts span{font-size:13.5px}}
+
+/* pricing */
+.plans{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:36px;text-align:left;max-width:780px;margin-inline:auto}
+.plan{position:relative;background:var(--card);border:1px solid var(--line);border-radius:26px;padding:26px;display:flex;flex-direction:column;gap:6px}
+.plan.best{border:2px solid var(--green);box-shadow:var(--shadow)}
+.plan .tag{position:absolute;top:-12px;left:22px;background:var(--green);color:#fff;font:700 11.5px Inter,sans-serif;border-radius:999px;padding:4px 12px}
+.plan h3{font-size:21px}
+.plan .for{color:var(--muted);font-size:14px}
+.price{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;margin-top:10px}
+.price b{font:600 44px/1 Fraunces,Georgia,serif}
+.price s{color:var(--muted)}.price small{color:var(--muted)}
+.save{color:#137a45;font:600 13.5px Inter,sans-serif;min-height:20px}
+.plan ul{list-style:none;padding:0;margin:8px 0 18px;font-size:15px;flex:1;display:grid;gap:7px;align-content:start}
+.plan li{padding-left:24px;position:relative}.plan li:before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:700}
+.plan li.no:before{content:"–";color:var(--muted)}
+.plan .btn{width:100%}
+.plan .alt{font-size:13.5px;text-align:center;margin-top:8px;color:var(--muted)}
+.plan .alt a{color:var(--green);font-weight:600}
+.offer{margin:20px auto 0;color:#7a4b06;font-size:14.5px}
+@media (max-width:860px){.plans{grid-template-columns:1fr;max-width:460px;margin-inline:auto}.plan{padding:22px}}
+
+/* help tiles */
+.help{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:32px}
+.tile{display:flex;flex-direction:column;gap:8px;text-align:left;background:var(--card);border:1px solid var(--line);border-radius:24px;padding:24px;font:inherit;color:inherit;cursor:pointer;transition:border-color .15s,transform .15s}
+.tile:hover{border-color:var(--green);transform:translateY(-2px)}
+.tile .ic{width:44px;height:44px;border-radius:14px;background:var(--green-3);color:var(--green);display:grid;place-items:center}
+.tile .ic svg{width:22px;height:22px}
+.tile b{font:600 21px/1.2 Fraunces,Georgia,serif;margin-top:8px}
+.tile .d{color:var(--muted);font-size:15px}
+.tile em{font-style:normal;font:600 14.5px Inter,sans-serif;color:var(--green);margin-top:auto;padding-top:6px}
+@media (max-width:760px){
+  .help{grid-template-columns:1fr;gap:10px}
+  .tile{display:grid;grid-template-columns:44px 1fr 20px;align-items:center;column-gap:14px;padding:16px 18px;border-radius:18px}
+  .tile b{margin:0;font-size:18px;grid-column:2}.tile .d{grid-column:2;font-size:14px}
+  .tile .ic{grid-row:1/3}.tile em{grid-column:3;grid-row:1/3;padding:0;font-size:20px}
+  .tile em i{display:none}
+}
+
+.final{text-align:center;padding-block:8px clamp(64px,9vw,96px)}
+.final h2{font-size:clamp(28px,4.4vw,42px)}
+
+/* sticky mobile CTA */
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:30;display:none;padding:10px max(16px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));background:rgba(247,244,238,.95);border-top:1px solid var(--line);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);transform:translateY(110%);transition:transform .25s}
+.sticky.on{transform:none}
+.sticky .btn{width:100%}
+@media (max-width:760px){.sticky{display:block}.site-foot{padding-bottom:110px}}
+
+/* pop-up panels */
+html:has(dialog[open]){overflow:hidden}
+dialog.sheet{border:0;padding:0;margin:auto;width:min(760px,calc(100% - 32px));max-height:min(86vh,900px);border-radius:28px;background:var(--paper);color:var(--ink);box-shadow:0 40px 100px -20px rgba(19,35,31,.5);overflow:hidden}
+dialog.sheet[open]{display:flex;flex-direction:column;animation:pop .22s ease-out}
+dialog.sheet::backdrop{background:rgba(19,35,31,.5);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
+@keyframes pop{from{opacity:0;transform:translateY(16px) scale(.98)}to{opacity:1;transform:none}}
+.sh-head{display:flex;align-items:center;gap:12px;padding:18px 20px 14px 26px;border-bottom:1px solid var(--line);background:var(--paper)}
+.sh-head h2{font-size:22px;margin-right:auto}
+.x{width:38px;height:38px;border-radius:50%;border:0;background:var(--paper-2);color:var(--ink);cursor:pointer;display:grid;place-items:center;flex:none}
+.x svg{width:18px;height:18px}.x:hover{background:#e4dccd}
+.sh-body{overflow-y:auto;padding:22px 26px 30px;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;min-height:0}
+.sh-body p{margin:8px 0}
+.sh-body ol,.sh-body ul{padding-left:22px;margin:8px 0}.sh-body li{margin:6px 0}
+.sh-body h4{margin:18px 0 6px;font:600 16px Inter,sans-serif;color:var(--green-2)}
+.sh-body .shotf{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#fff;margin:6px 0 16px}
+.sh-body .fsub{color:var(--ink-2);font-size:17px}
+@media (max-width:640px){
+  dialog.sheet{width:100%;max-width:100%;max-height:92vh;margin:auto 0 0;border-radius:24px 24px 0 0}
+  dialog.sheet[open]{animation:up .25s ease-out}
+  .sh-head{padding:14px 14px 12px 20px}
+  .sh-body{padding:18px 20px calc(28px + env(safe-area-inset-bottom,0px))}
+}
+@keyframes up{from{transform:translateY(40px);opacity:.4}to{transform:none;opacity:1}}
+.path{display:inline-block;font:600 13px Inter,sans-serif;color:var(--green-2);background:var(--green-3);border-radius:7px;padding:1px 8px}
+.kbd{font:600 13px Inter,sans-serif;background:var(--card);border:1px solid var(--line);border-radius:6px;padding:1px 6px;white-space:nowrap}
+.note{border-left:4px solid var(--saffron);background:var(--saffron-2);border-radius:10px;padding:12px 16px;color:#5a3a06;font-size:15px;margin:14px 0}
+.seg{display:inline-flex;background:var(--paper-2);border-radius:12px;padding:4px;gap:4px;margin-bottom:16px}
+.seg button{border:0;background:transparent;font:600 14.5px Inter,sans-serif;color:var(--muted);padding:8px 16px;border-radius:9px;cursor:pointer}
+.seg button[aria-selected=true]{background:var(--card);color:var(--ink);box-shadow:0 1px 3px rgba(19,35,31,.15)}
+.qs{list-style:none;padding:0!important;margin:0;display:grid;gap:10px;counter-reset:q}
+.qs li{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 16px 14px 56px;position:relative;margin:0!important}
+.qs li:before{counter-increment:q;content:counter(q);position:absolute;left:16px;top:14px;width:28px;height:28px;border-radius:50%;background:var(--green);color:#fff;display:grid;place-items:center;font:600 14px Fraunces,serif}
+.qs b{display:block}.qs span{color:var(--muted);font-size:15px}
+.qs[hidden]{display:none}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 14px}
+.chips button{font:600 13px Inter,sans-serif;color:var(--green-2);background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 12px;cursor:pointer}
+.chips button:hover{border-color:var(--green)}
+.acc details{background:var(--card);border:1px solid var(--line);border-radius:16px;margin:8px 0;scroll-margin-top:10px}
+.acc summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:12px;padding:14px 16px;font-weight:600}
+.acc summary::-webkit-details-marker{display:none}
+.acc summary .n{flex:none;width:28px;height:28px;border-radius:50%;background:var(--green-3);color:var(--green);display:grid;place-items:center;font:600 14px Fraunces,serif}
+.acc summary:after{content:"+";margin-left:auto;color:var(--green);font-size:22px;line-height:1;font-weight:400}
+.acc details[open] summary:after{content:"–"}
+.acc .in{padding:0 18px 16px;color:var(--ink-2);font-size:15.5px}
+.tbl{overflow-x:auto}.tbl table{border-collapse:collapse;width:100%;font-size:14.5px}
+.tbl th,.tbl td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+.tbl td:first-child{font-weight:600}
+.check{list-style:none;padding-left:0!important}.check li{padding-left:28px;position:relative}
+.check li:before{content:"";position:absolute;left:0;top:4px;width:16px;height:16px;border:2px solid var(--green);border-radius:5px}
+
+.mock{position:relative;display:flex;justify-content:center;padding:18px 0 8px}
+.mock .mphone{position:relative;width:min(270px,64vw);border-radius:42px;background:#13231f;padding:10px;box-shadow:0 34px 70px -28px rgba(0,0,0,.45)}
+.mock .mphone img{display:block;width:100%;height:auto;border-radius:32px}
+.mock .mchip{position:absolute;z-index:3;background:#fff;border:1px solid var(--line);border-radius:14px;padding:9px 13px;box-shadow:0 14px 30px -14px rgba(19,35,31,.35);font:500 12.5px/1.35 Inter,sans-serif;color:var(--muted);text-align:left}
+.mock .mchip b{display:block;color:var(--ink);font-weight:600;font-size:13.5px}
+.mock .c1{left:max(0px,calc(50% - 205px));top:22%}
+.mock .c2{right:max(0px,calc(50% - 205px));top:52%}
+.mock .c2 b{color:var(--green)}
+.mock .c3{left:50%;bottom:-6px;transform:translateX(-50%);background:var(--saffron-2);border-color:#f0d9ae;color:#7a4b06;font-weight:600;padding:5px 12px;border-radius:999px}
+@media (max-width:420px){.mock .c1{left:0}.mock .c2{right:0}.mock .mchip{font-size:11.5px;padding:7px 10px}.mock .mchip b{font-size:12.5px}}
+.stage .mock{z-index:1}
+</style>
+<style>
+.lgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin-top:22px}
+.lcard{background:#fff;border:1px solid var(--line);border-radius:22px;padding:18px;overflow:hidden}
+.lcard small{color:var(--muted);font-weight:600;font-size:13px}
+.lcard h3{margin:4px 0 10px;font-size:20px}
+.lcard .shot{border-radius:16px;overflow:hidden;border:1px solid var(--line);aspect-ratio:9/12;background:#f4f6f5}
+.lcard .shot img{width:100%;display:block}
+.lcard p{margin:12px 0 0;color:var(--muted);font-size:15px}
+.cmp{width:100%;border-collapse:collapse;margin-top:18px;font-size:15px;background:#fff;border-radius:18px;overflow:hidden;border:1px solid var(--line)}
+.cmp th,.cmp td{padding:11px 12px;border-bottom:1px solid var(--line);text-align:left}
+.cmp th{background:#f3efe6;font-size:13px}
+.cmp td:nth-child(2),.cmp td:nth-child(3),.cmp th:nth-child(2),.cmp th:nth-child(3){text-align:center}
+.up{background:linear-gradient(135deg,#0e5a4f,#13806f);color:#fff;border-radius:28px;padding:28px 22px}
+.up h2{color:#fff}.up .lede{color:rgba(255,255,255,.88)}
+.up .uprow{display:flex;flex-wrap:wrap;gap:12px;margin:16px 0}
+.up .uprow div{background:rgba(255,255,255,.12);border-radius:16px;padding:12px 16px;min-width:150px}
+.up .uprow b{display:block;font-size:22px}.up .uprow s{opacity:.7;margin-left:6px;font-size:14px}
+.up .btn{background:#fff;color:#0e5a4f}
+.faq details{background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px 16px;margin:10px 0}
+.faq summary{font-weight:600;cursor:pointer}
+.faq p{margin:10px 0 0;color:var(--muted)}
+</style>
+<script>if(window.matchMedia&&!matchMedia('(prefers-reduced-motion: reduce)').matches&&'IntersectionObserver' in window)document.documentElement.classList.add('anim')</script>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',wait_for_update:500});
+gtag('set','ads_data_redaction',true);
+try{if(localStorage.getItem('nn_consent')==='yes')gtag('consent','update',{analytics_storage:'granted'});}catch(e){}
+gtag('js',new Date());gtag('config','G-R91PK86YHW');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-R91PK86YHW"></script>
+</head>
+<body>
+<div class="ffback"><div class="wrap"><a href="/">← nisnil.co.in</a><span>FamilyFi is a product of Nisnil AI-Finance Solutions</span></div></div>
+<nav class="subnav" aria-label="FamilyFi Lite"><div class="wrap">
+  <a class="pname" href="#top"><img src="/img/logo.jpg" alt="">FamilyFi Lite</a>
+  <a class="l" href="#features">Features</a><a class="l" href="#plans">Pricing</a><a class="l" href="#upgrade">Upgrade</a><a class="l" href="#faq">Questions</a><a class="l home" href="/" title="Back to nisnil.co.in">nisnil ↗</a>
+  <a class="btn btn-pri" data-go="trial" href="#plans">Try free</a>
+</div></nav>
+
+<main id="top">
+<section class="hero"><div class="wrap">
+  <span class="pill">New · for one person, on your phone</span>
+  <h1>Your money, simple. <em>Right on your phone.</em></h1>
+  <p class="lede">Add spending in seconds, paste a bank SMS, keep to a monthly budget and grow your savings goals. Everything is saved in your own Google Drive.</p>
+  <div class="ctas">
+    <a class="btn btn-pri" data-go="trial" href="#plans">Start 15-day free trial</a>
+    <a class="lnk" data-go="demo" href="#">See the demo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
+  </div>
+  <p class="hnote">No card needed · Sign in with Gmail · Works in your phone’s browser</p>
+  <div class="stage"><div class="mock"><div class="mphone"><img src="/img/lite_home.jpg" width="600" height="1298" alt="FamilyFi Lite home screen with sample data"></div><div class="mchip c1"><b>₹6,632 left</b><span>₹316 a day for 21 days</span></div><div class="mchip c2"><b>Goa trip</b><span>36% saved</span></div><div class="mchip c3">Sample data</div></div></div>
+</div></section>
+<div class="facts"><div class="wrap"><ul>
+  <li><b>15 days</b><span>free trial, no card</span></li>
+  <li><b>₹49</b><span>a month after the trial</span></li>
+  <li><b>Your Drive</b><span>we never see your data</span></li>
+  <li><b>Bank SMS</b><span>paste it, it’s recorded</span></li>
+</ul></div></div>
+
+<section id="features"><div class="wrap">
+  <h2 class="big">Small app. Clear money.</h2>
+  <div class="lgrid">
+    <article class="lcard"><small>Spending</small><h3>Paste a bank SMS. Done.</h3><div class="shot"><img src="/img/lite_sms.jpg" alt="Adding a spend from a bank SMS" loading="lazy"></div>
+      <p>Amount, shop, date and category are filled in for you. The same UPI reference is never counted twice.</p></article>
+    <article class="lcard"><small>Budget</small><h3>Know what’s left, every day.</h3><div class="shot"><img src="/img/lite_cats.jpg" alt="Top categories against their budgets" loading="lazy"></div>
+      <p>A monthly budget, limits per category, and how much you can still spend each day this month.</p></article>
+    <article class="lcard"><small>Goals</small><h3>Save for what matters.</h3><div class="shot"><img src="/img/lite_goals.jpg" alt="Savings goals with progress" loading="lazy"></div>
+      <p>Emergency fund, a trip or a phone — see how much to save each month to get there on time.</p></article>
+  </div>
+</div></section>
+
+<section id="privacy" style="padding-top:0"><div class="wrap"><div class="priv">
+  <h2 class="big">We never see your data.</h2>
+  <p class="lede">FamilyFi Lite saves one file in your own Google Drive. It can only see that file — never your other files, and never your bank.</p>
+  <div class="pts">
+    <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg><b>Your Google Drive</b><span>Sign in on a new phone and carry on.</span></div>
+    <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg><b>No bank logins</b><span>You add entries or paste an SMS yourself.</span></div>
+    <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><b>Only you</b><span>Your Gmail opens your data. Nobody else.</span></div>
+    <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg><b>Export any time</b><span>Download everything as a CSV for Excel.</span></div>
+  </div>
+</div></div></section>
+
+<section id="plans" class="center" style="padding-top:0"><div class="wrap">
+  <h2 class="big">Try free for 15 days.<br>Then choose.</h2>
+  <p class="lede">All features in both plans. Prices in ₹ — <b>final price, no GST or hidden charges. One-time payment for the period: no auto-debit, no card saved.</b></p>
+  <div class="plans">
+    <div class="plan best"><span class="tag">Best value</span><h3>Lite · Yearly</h3><div class="for">Less than ₹42 a month</div>
+      <div class="price"><b>₹499</b><small>/ year</small></div><div class="save">Save ₹89 against monthly</div>
+      <ul><li>Spending, budgets and goals</li><li>Bank SMS reader</li><li>Saved in your own Google Drive</li></ul>
+      <a class="btn btn-pri" data-go="trial" href="#">Start free trial</a><div class="alt"><a href="#" data-go="buy:yearly">Already decided? Buy yearly</a></div></div>
+    <div class="plan"><h3>Lite · Monthly</h3><div class="for">Pay month by month</div>
+      <div class="price"><b>₹49</b><small>/ month</small></div><div class="save"></div>
+      <ul><li>Everything in Yearly</li><li>No auto-debit — renew when you like</li><li>Switch to yearly later</li></ul>
+      <a class="btn btn-sec" data-go="trial" href="#">Start free trial</a><div class="alt"><a href="#" data-go="buy:monthly">Buy monthly</a></div></div>
+  </div>
+  <p class="offer">Pay with the <b>same Gmail</b> you use in the app · UPI, cards and net banking via Razorpay</p>
+</div></section>
+
+<section id="upgrade" style="padding-top:0"><div class="wrap"><div class="up">
+  <h2 class="big">Family joining? Move up to FamilyFi.</h2>
+  <p class="lede">The full FamilyFi planner is for the whole household: every member, insurance renewals, loans, investments with live prices, bank statement import and net worth. It is a separate plan (an additional payment).</p>
+  <div class="uprow"><div><small>FamilyFi Yearly</small><b>₹999<s>₹1,499</s></b></div><div><small>FamilyFi Monthly</small><b>₹99<s>₹149</s></b></div></div>
+  <p class="lede" style="margin:0 0 16px">Your Lite entries and goals come with you: open FamilyFi with the <b>same Gmail</b> and tap <b>“Bring in your FamilyFi Lite entries”</b> on its home screen. Launch prices until 31 Dec 2026.</p>
+  <a class="btn" href="/familyfi/">See FamilyFi <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+</div></div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <h2 class="big center">Lite or full FamilyFi?</h2>
+  <table class="cmp"><thead><tr><th></th><th>Lite</th><th>FamilyFi</th></tr></thead><tbody>
+    <tr><td>Spending, budget, savings goals</td><td>✓</td><td>✓</td></tr>
+    <tr><td>Add from bank SMS</td><td>✓</td><td>✓</td></tr>
+    <tr><td>Bank &amp; card statement import (Excel, CSV, PDF)</td><td>—</td><td>✓</td></tr>
+    <tr><td>Insurance, loans, investments, net worth</td><td>—</td><td>✓</td></tr>
+    <tr><td>Live MF NAVs and share prices</td><td>—</td><td>✓</td></tr>
+    <tr><td>Phone + laptop</td><td>Phone</td><td>Both</td></tr>
+    <tr><td>Price after 15-day trial</td><td>₹49/mo · ₹499/yr</td><td>₹99/mo · ₹999/yr</td></tr>
+  </tbody></table>
+</div></section>
+
+<section id="faq" style="padding-top:28px"><div class="wrap faq">
+  <h2 class="big center">Questions</h2>
+  <details><summary>How do I install it?</summary><p>Open the app link on your phone. Android (Chrome): menu ⋮ → <b>Add to Home screen</b>. iPhone (Safari): Share → <b>Add to Home Screen</b>. It then opens like an app.</p></details>
+  <details><summary>Does it work without internet?</summary><p>No. FamilyFi Lite loads and saves your data straight from your own Google Drive, so it needs the internet. That is also why nothing is left on the phone if you lose it.</p></details>
+  <details><summary>How do I pay?</summary><p>Tap <b>Buy</b> in the app (More → Your plan) or on this page. Pay on Razorpay with the same Gmail you use in the app; you come back to the app and your plan date updates. There is no auto-debit.</p></details>
+  <details><summary>Can I move to full FamilyFi later?</summary><p>Yes. Buy a FamilyFi plan, open FamilyFi with the same Gmail, and bring in your Lite entries and goals with one tap.</p></details>
+  <details><summary>Can I get a refund?</summary><p>Please read our <a href="/refund/">refund &amp; cancellation policy</a>. The 15-day free trial lets you try everything first.</p></details>
+</div></section>
+
+<section class="final"><div class="wrap">
+  <h2>Start knowing where your money goes.</h2>
+  <p class="lede">15 days free. No card needed. Your data stays yours.</p>
+  <div class="ctas"><a class="btn btn-pri" data-go="trial" href="#plans">Start free trial</a><a class="lnk" href="#plans">See pricing <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a></div>
+</div></section>
+</main>
+<footer class="site-foot ff-foot"><div class="wrap"><div class="grid"><div class="brand"><b>FamilyFi</b>Family Finance Planner — private, in your own Google Drive.</div><div><h4>FamilyFi</h4><ul><li><a href="/familyfi/#plans">Pricing &amp; free trial</a></li><li><a href="/familyfi-lite/">FamilyFi Lite (phone app)</a></li><li><a href="/familyfi/#manual">User manual</a></li><li><a href="/familyfi/#faq">Questions</a></li></ul></div><div><h4>Policies</h4><ul><li><a href="/terms/">Terms of use</a></li><li><a href="/privacy/">Privacy policy</a></li><li><a href="/refund/">Refund &amp; cancellation</a></li><li><a href="/disclaimer/">Disclaimer</a></li></ul></div></div><div class="base"><span>FamilyFi by Nisnil AI-Finance Solutions · © 2026 Sunil Panchal</span><span><a href="/">← Back to nisnil.co.in</a></span></div></div></footer>
+<div class="sticky" id="sticky"><a class="btn btn-pri" data-go="trial" href="#plans">Start 15-day free trial</a></div>
+<script>
+(function(){
+  var S=SITE;
+  document.querySelectorAll('[data-go]').forEach(function(a){
+    var g=a.getAttribute('data-go'), url=g==='demo'?S.APP_URL+'?demo':g.indexOf('buy:')===0?S.BUY[g.slice(4)]:S.APP_URL;
+    if(!url){url='mailto:'+S.EMAIL+'?subject='+encodeURIComponent('FamilyFi Lite plan');}
+    a.href=url; if(/^https?:/.test(url)&&url.indexOf(location.host)<0){a.target='_blank';a.rel='noopener';}
+  });
+  var st=document.getElementById('sticky'), pl=document.getElementById('plans');
+  if(st&&pl&&'IntersectionObserver' in window){var seen=false;new IntersectionObserver(function(e){seen=e[0].isIntersecting;st.classList.toggle('on',!seen&&scrollY>500);}).observe(pl);addEventListener('scroll',function(){st.classList.toggle('on',!seen&&scrollY>500);},{passive:true});}
+})();
+</script>
+<script src="/assets/anim.js?v=ce940e37" defer></script><div id="nnCookie" class="nn-ck" role="dialog" aria-live="polite" aria-label="Cookie choice" hidden>
+<p>We use Google Analytics cookies to count visits and improve this website. The FamilyFi app itself has no trackers. <a href="/privacy/">Privacy policy</a></p>
+<div class="nn-ck-b"><button type="button" data-c="no">Decline</button><button type="button" data-c="yes" class="pri">Accept</button></div></div>
+<style>
+.nn-ck{position:fixed;z-index:9999;left:max(12px,env(safe-area-inset-left));right:max(12px,env(safe-area-inset-right));bottom:max(12px,env(safe-area-inset-bottom));max-width:560px;margin:0 auto;background:#13231f;color:#f4f1ea;border-radius:16px;padding:14px 16px;box-shadow:0 10px 30px rgba(0,0,0,.25);font:14px/1.5 Inter,system-ui,sans-serif;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.nn-ck[hidden]{display:none}.nn-ck p{margin:0;flex:1 1 260px}.nn-ck a{color:#bfe3d6}
+.nn-ck-b{display:flex;gap:8px;margin-left:auto}.nn-ck button{font:600 14px Inter,system-ui,sans-serif;border-radius:999px;padding:8px 16px;cursor:pointer;border:1px solid #5d7d74;background:transparent;color:#f4f1ea}
+.nn-ck button.pri{background:#f4f1ea;color:#13231f;border-color:#f4f1ea}
+.nn-ck-link{background:none;border:0;padding:0;font:inherit;color:inherit;text-decoration:underline;cursor:pointer;opacity:.8}
+</style>
+<script>
+(function(){var b=document.getElementById('nnCookie');var v=null;try{v=localStorage.getItem('nn_consent')}catch(e){}
+function show(){b.hidden=false}
+if(v!=='yes'&&v!=='no')show();
+b.addEventListener('click',function(e){var c=e.target.getAttribute&&e.target.getAttribute('data-c');if(!c)return;
+try{localStorage.setItem('nn_consent',c)}catch(x){}
+if(typeof gtag==='function')gtag('consent','update',{analytics_storage:c==='yes'?'granted':'denied'});b.hidden=true;});
+var f=document.querySelector('footer');var l=document.createElement('button');l.type='button';l.className='nn-ck-link';l.textContent='Cookie settings';l.addEventListener('click',show);
+var w=document.createElement('p');w.style.cssText='margin:12px 0 0;font-size:13px';w.appendChild(l);(f||document.body).appendChild(w);})();
+</script>
+</body>
+</html>
