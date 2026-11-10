@@ -19,7 +19,7 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=7d03d9d5">
+<link rel="stylesheet" href="/assets/site.css?v=ce940e37">
 <style>
 /* ---------- hero ---------- */
 .hero{padding-block:44px 56px;overflow:hidden}
@@ -157,7 +157,103 @@ section.s{padding-block:72px}
   .steps,.prom,.contact{grid-template-columns:1fr}
   .band{border-radius:24px}
 }
+
+.mock{position:relative;display:flex;justify-content:center;padding:18px 0 8px}
+.mock .mphone{position:relative;width:min(270px,64vw);border-radius:42px;background:#13231f;padding:10px;box-shadow:0 34px 70px -28px rgba(0,0,0,.45)}
+.mock .mphone img{display:block;width:100%;height:auto;border-radius:32px}
+.mock .mchip{position:absolute;z-index:3;background:#fff;border:1px solid var(--line);border-radius:14px;padding:9px 13px;box-shadow:0 14px 30px -14px rgba(19,35,31,.35);font:500 12.5px/1.35 Inter,sans-serif;color:var(--muted);text-align:left}
+.mock .mchip b{display:block;color:var(--ink);font-weight:600;font-size:13.5px}
+.mock .c1{left:max(0px,calc(50% - 205px));top:22%}
+.mock .c2{right:max(0px,calc(50% - 205px));top:52%}
+.mock .c2 b{color:var(--green)}
+.mock .c3{left:50%;bottom:-6px;transform:translateX(-50%);background:var(--saffron-2);border-color:#f0d9ae;color:#7a4b06;font-weight:600;padding:5px 12px;border-radius:999px}
+@media (max-width:420px){.mock .c1{left:0}.mock .c2{right:0}.mock .mchip{font-size:11.5px;padding:7px 10px}.mock .mchip b{font-size:12.5px}}
+
+.hero-art{display:flex;justify-content:center}
+.prod1{background:var(--card);border:1px solid var(--line);border-radius:28px;box-shadow:var(--shadow);padding:clamp(22px,4vw,40px)}
+.prod1 .prod-top{display:flex;gap:14px;align-items:center}
+.prod1 .prod-top h3{font-size:clamp(22px,3.4vw,30px);margin:0 0 6px}
+.prod1 .sub{color:var(--muted);margin-top:14px}
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.pills span{display:inline-flex;align-items:center;gap:8px;background:var(--green-3);color:var(--green);border-radius:999px;padding:7px 13px 7px 8px;font:600 13.5px Inter,sans-serif}
+.pills i{display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:#fff}.pills i svg{width:14px;height:14px}
+.price-row{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 26px;margin-top:22px;padding-top:18px;border-top:1px solid var(--line)}
+.price-row small{color:var(--muted);font-size:12.5px;margin-right:6px}.price-row b{font:600 24px Fraunces,Georgia,serif}.price-row s{color:var(--muted);font-size:13px;margin-left:5px}
+.price-row p{flex-basis:100%;font-size:13px;color:var(--muted);margin:0}
+.closer{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px}
+.who{padding:8px 4px}
+.who blockquote{margin:18px 0 0;font:500 clamp(20px,2.6vw,25px)/1.4 Fraunces,Georgia,serif;color:var(--ink)}
+.who p{color:var(--ink-2);margin-top:14px}.who .lnk{margin-top:10px;font:600 15.5px Inter,sans-serif;color:var(--green);background:none;border:0;padding:6px 0;cursor:pointer;display:inline-flex;gap:6px;align-items:center}.who .lnk svg{width:16px;height:16px}
+.talk{background:var(--saffron-2);border:1px solid #f0d9ae;border-radius:28px;padding:clamp(24px,4vw,40px)}
+.talk h2{font-size:clamp(24px,3.6vw,32px)}.talk p{color:var(--ink-2);margin-top:8px}.talk .links{font-size:14.5px;margin-top:18px;overflow-wrap:anywhere}.talk .copy{margin:0 4px;padding:4px 10px}
+.dlg{width:min(640px,calc(100% - 32px));max-height:86vh;overflow:auto;border:0;border-radius:24px;padding:clamp(22px,4vw,34px);background:var(--card);color:var(--ink-2);box-shadow:0 40px 90px -30px rgba(0,0,0,.5)}
+.dlg::backdrop{background:rgba(12,30,26,.55);backdrop-filter:blur(2px)}
+.dlg .x{position:sticky;float:right;top:0;width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:var(--paper);font-size:22px;line-height:1;cursor:pointer;color:var(--ink)}
+.dlg h2{font-size:clamp(22px,3.4vw,28px);color:var(--ink)}.dlg h3{font-size:18px;margin:22px 0 8px;color:var(--ink)}
+.dlg p{margin-top:10px;font-size:15px}
+.dh{display:flex;gap:14px;align-items:center;padding-right:40px}.dh img{width:52px;height:52px;border-radius:14px}.dh p{margin:4px 0 0;color:var(--muted);font-size:14px}
+.dfeat,.dprom{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:14px}
+.dfeat li,.dprom li{display:flex;gap:12px;font-size:14.5px;line-height:1.5}.dfeat b,.dprom b{display:block;color:var(--ink)}
+.dfeat i,.dprom i{flex:none;width:34px;height:34px;border-radius:10px;display:grid;place-items:center;background:var(--green-3);color:var(--green)}.dfeat i svg,.dprom i svg{width:17px;height:17px}
+.dp b{color:var(--ink)}.dp s{color:var(--muted)}
+.dlg .cta{margin-top:18px}
+.dl{display:grid;grid-template-columns:minmax(90px,30%) 1fr;gap:8px 14px;margin:16px 0 0;font-size:14.5px}.dl dt{color:var(--muted)}.dl dd{margin:0;font-weight:600;color:var(--ink)}
+.dpol{font-size:14px}
+body.modal{overflow:hidden}
+@media (max-width:980px){.closer{grid-template-columns:1fr}}
+
+.collage{position:relative;justify-self:center;width:100%;max-width:470px;aspect-ratio:1/1.05;border-radius:32px;background:radial-gradient(120% 90% at 70% 10%,#1b7a6b,var(--green) 55%,var(--green-2));overflow:hidden}
+.collage:before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.09) 1px,transparent 1px);background-size:18px 18px}
+.cphone{position:absolute;left:50%;top:8%;width:46%;transform:translateX(-50%);border-radius:28px;border:7px solid #0b1b18;background:#0b1b18;box-shadow:0 30px 60px -20px rgba(0,0,0,.55);overflow:hidden}
+.ccard{position:absolute;background:#fff;border-radius:16px;padding:11px 14px;box-shadow:0 18px 36px -14px rgba(0,0,0,.5);font-size:12.5px;line-height:1.35;color:var(--ink);width:44%}
+.ccard .k{display:block;font:600 10.5px Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--saffron);margin-bottom:4px}
+.ccard b{display:block;font-size:13.5px}
+.ccard .bar,.reg i{display:block;height:7px;border-radius:9px;background:#eee8dc;margin-top:8px;overflow:hidden}.ccard .bar em,.reg i em{display:block;height:100%;background:var(--saffron);border-radius:9px}
+.t1{left:4%;top:12%}.t2{right:4%;top:44%}.t3{left:6%;bottom:9%;display:flex;gap:10px;align-items:center;width:auto}
+.t3 .ok{flex:none;width:30px;height:30px;border-radius:50%;background:var(--green-3);color:var(--green);display:grid;place-items:center;font-weight:700}
+.t3 small{color:var(--muted)}
+.reg{display:grid;grid-template-columns:42px 1fr;align-items:center;gap:8px;margin-top:6px;font-size:12px;color:var(--muted)}.reg i{margin:0}.reg i em{background:#c9bfae}.reg.on i em{background:var(--green)}.reg.on span{color:var(--green);font-weight:600}
+.ccard small{display:block;color:var(--muted);font-size:11px;margin-top:5px}
+.collage .sample{position:absolute;right:14px;bottom:10px;font-size:11px;color:rgba(255,255,255,.65)}
+.svc{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.sv{display:flex;flex-direction:column;text-align:left;font:inherit;color:inherit;background:var(--card);border:1px solid var(--line);border-radius:24px;overflow:hidden;box-shadow:var(--shadow);cursor:pointer;padding:0;text-decoration:none;min-width:0}
+.sv.main{grid-column:1/-1;flex-direction:row}
+.sv .pic{position:relative;height:190px;background:linear-gradient(160deg,var(--paper-2),#e6dfd1);display:grid;place-items:center;overflow:hidden}
+.sv.main .pic{height:auto;min-height:260px;flex:0 0 42%;background:radial-gradient(110% 90% at 70% 10%,#1b7a6b,var(--green) 60%,var(--green-2))}
+.sv .tx{padding:20px 22px 22px;display:flex;flex-direction:column;gap:8px;flex:1}
+.sv h3{font-size:22px}.sv p{color:var(--muted);font-size:15px}
+.sv .tag{align-self:flex-start}
+.sv .go{margin-top:auto;padding-top:6px;color:var(--green);font-weight:600;display:inline-flex;gap:6px;align-items:center}.sv .go svg{width:16px;height:16px}
+.famp img{width:46%;max-width:210px;border-radius:22px;border:6px solid #0b1b18;margin:28px 0 -60px;box-shadow:0 24px 40px -18px rgba(0,0,0,.6)}
+.tc{background:#fff;border-radius:16px;padding:14px 16px;width:78%;box-shadow:0 14px 30px -16px rgba(0,0,0,.35);font-size:13px}.tc small{color:var(--muted)}.tc .reg{grid-template-columns:86px 1fr}.tc b{display:block;margin-top:10px;color:var(--green);font-size:13.5px}
+.mini{width:92px;border-radius:16px;border:5px solid #0b1b18;overflow:hidden;height:150px;box-shadow:0 18px 30px -14px rgba(0,0,0,.5)}.mini img{width:100%}
+.litep .lb{position:absolute;right:26%;top:26px;background:var(--saffron);color:#fff;font:700 12px Inter,sans-serif;border-radius:999px;padding:4px 10px}
+.ledger{background:#fff;border-radius:14px;width:84%;padding:8px 14px;box-shadow:0 14px 30px -16px rgba(0,0,0,.35);font-size:12.5px}
+.ledger div{display:grid;grid-template-columns:1fr auto 18px;gap:8px;padding:6px 0;border-bottom:1px solid var(--line)}.ledger em{color:var(--green);font-style:normal;font-weight:700}.ledger .tot{border:0;grid-template-columns:1fr auto;font-weight:600}.ledger .tot b{color:var(--green)}
+.itr{background:#fff;border-radius:16px;padding:16px 18px;width:78%;box-shadow:0 14px 30px -16px rgba(0,0,0,.35)}.itr>b{font:600 30px Fraunces,Georgia,serif;color:var(--green)}.itr>span{display:block;color:var(--muted);font-size:12.5px}
+.itr .st{display:flex;align-items:center;gap:6px;margin-top:12px;font-size:11.5px;color:var(--ink-2);flex-wrap:wrap}.itr .st i{width:12px;height:12px;border-radius:50%;border:2px solid var(--green)}.itr .st i.d{background:var(--green)}
+.dlist{margin:14px 0 0;padding-left:20px;display:grid;gap:8px;font-size:15px}.dnote{background:var(--green-3);border-radius:14px;padding:12px 14px;margin-top:16px!important;font-size:14px}
+.dlg .tag{margin-bottom:10px}
+@media (max-width:760px){.svc{grid-template-columns:1fr}.sv.main{flex-direction:column}.sv.main .pic{min-height:220px}}
+
+.bleed-hero{background:linear-gradient(180deg,#fbf8f2 0%,var(--paper) 100%);border-bottom:1px solid var(--line)}
+.why{padding-block:clamp(48px,7vw,88px)!important;background:var(--green);margin-top:clamp(32px,5vw,56px)}
+.why .band{background:none;border-radius:0;padding:0}
+.abt{background:var(--paper-2);padding-block:clamp(48px,7vw,88px)!important}
+.abt .who{background:var(--card);border:1px solid var(--line);border-radius:28px;padding:clamp(24px,4vw,40px)}
+.sv.main .pills{margin-top:6px}.sv.main .price-row{margin-top:10px}
+@media (min-width:1100px){
+  .svc{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .sv .pic{height:170px}
+  .sv.main .pic{flex-basis:46%}
+  .sv h3{font-size:20px}
+  .hero .wrap{gap:72px}
+  .collage{max-width:560px}
+}
+@media (min-width:1600px){.hero h1{font-size:68px}.collage{max-width:600px}}
+@media (max-width:480px){.collage{border-radius:24px;aspect-ratio:1/1.12}.cphone{width:52%;top:7%}.ccard{width:46%;padding:8px 10px;font-size:11px}.ccard b{font-size:12px}.t1{left:3%;top:6%}.t2{right:3%;top:auto;bottom:7%}.t3{display:none}.sv .tx{padding:18px}.sv.main .pills span{font-size:12.5px}}
 </style>
+<script>if(window.matchMedia&&!matchMedia('(prefers-reduced-motion: reduce)').matches&&'IntersectionObserver' in window)document.documentElement.classList.add('anim')</script>
 <script>
 window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
 gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',wait_for_update:500});
@@ -170,125 +266,139 @@ gtag('js',new Date());gtag('config','G-R91PK86YHW');
 <body>
 <header class="site-head"><div class="wrap">
   <a class="logo" href="/" aria-label="Nisnil AI-Finance Solutions home"><img class="logo-mark" src="/img/nisnil.png" alt=""><span class="logo-text"><b>nisnil</b><small>AI-Finance Solutions</small></span></a>
-  <nav class="site-nav"><a class="l" href="#products">Products</a><a class="l" href="#how">How it works</a><a class="l" href="#about">About</a><a class="l" href="#contact">Contact</a><a class="btn btn-pri btn-sm" href="/familyfi/#plans">Try FamilyFi</a></nav>
+  <nav class="site-nav"><a class="l" href="#services">Services</a><a class="l" href="#about">About</a><a class="l" href="#contact">Contact</a><a class="btn btn-pri btn-sm" href="/familyfi/">FamilyFi</a></nav>
 </div></header>
 
 <main id="top">
-<section class="hero"><div class="wrap">
+<section class="hero bleed-hero"><div class="wrap">
   <div>
-    <span class="eyebrow">Finance software · Ahmedabad, India</span>
-    <h1>Clear money decisions for every <em>Indian household.</em></h1>
-    <p class="lead">We turn bank statements, SMS alerts, loans and insurance policies into one honest picture of your family’s money — private, simple, and built by a finance professional.</p>
+    <span class="eyebrow">AI-driven financial services · Ahmedabad, India</span>
+    <h1>Smarter money work, <em>powered by AI.</em></h1>
+    <p class="lead">Nisnil builds AI-driven finance tools and services for Indian families, individuals and small businesses — planning, tax and bookkeeping, done with the care of a finance professional.</p>
     <div class="cta">
-      <a class="btn btn-pri" href="/familyfi/#plans">Start FamilyFi free for 15 days <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      <a class="btn btn-sec" href="#products">See our products</a>
+      <a class="btn btn-pri" href="#services">Explore our services <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn btn-sec" href="/familyfi/">Try FamilyFi free</a>
     </div>
-    <div class="facts"><div><b>15 days</b><span>free trial</span></div><div><b>₹0</b><span>setup cost</span></div><div><b>No ads</b><span>no data selling</span></div></div>
+    <div class="facts"><div><b>15 days</b><span>FamilyFi free trial</span></div><div><b>Your Drive</b><span>your data stays yours</span></div><div><b>AI-first</b><span>tools &amp; services</span></div></div>
   </div>
-  <div class="stage" aria-hidden="true">
-    <div class="phone"><img src="/img/hero.jpg" alt="" width="560" height="960"></div>
-    <div class="chip c2"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></i><span><b>₹41.42 L</b><small>Family net worth today</small></span></div>
-    <div class="chip c1"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 1 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg></i><span><b>Renewal in 30 days</b><small>Family health cover</small></span></div>
-    <span class="note">Sample data</span>
+  <div class="collage" aria-hidden="true">
+    <div class="cphone"><img src="/img/app_home.jpg" alt="" width="600" height="1302"></div>
+    <div class="ccard t1"><span class="k">AI insight</span><b>Food delivery up 18% this month</b><i class="bar"><em style="width:72%"></em></i></div>
+    <div class="ccard t2"><span class="k">Tax regime check</span><div class="reg"><span>Old</span><i><em style="width:82%"></em></i></div><div class="reg on"><span>New</span><i><em style="width:58%"></em></i></div><small>Lower bar = less tax</small></div>
+    <div class="ccard t3"><span class="ok">✓</span><span><b>Books reconciled</b><small>42 of 42 entries matched</small></span></div>
+    <span class="sample">Illustration · sample data</span>
   </div>
 </div></section>
 
-<section class="s" id="products" style="padding-top:24px"><div class="wrap">
-  <div class="s-head"><span class="eyebrow">Our products</span><h2>Software that does one job well.</h2><p>Every Nisnil product works on phone and laptop, keeps your data with you, and costs less than a family dinner out.</p></div>
-
-  <article class="prod">
-    <div class="prod-body">
-      <div class="prod-top"><img src="/img/logo.jpg" alt="FamilyFi logo"><span class="tag">Available now</span></div>
-      <h3>FamilyFi — Family Finance Planner</h3>
-      <p class="sub">Every rupee, loan, investment and insurance policy of your family in one private planner.</p>
-      <ul class="feat">
-        <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg></i><span><b>Statements &amp; SMS</b>Import Excel, CSV or PDF, or paste a bank SMS. No double counting.</span></li>
-        <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></i><span><b>Budgets &amp; trends</b>See which expenses keep growing, month after month.</span></li>
-        <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg></i><span><b>Loans &amp; prepayment</b>Real outstanding, EMIs and interest you can save.</span></li>
-        <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></i><span><b>Insurance &amp; renewals</b>Every policy, nominee and due date before it’s missed.</span></li>
-      </ul>
-      <div class="plans">
-        <div class="plan"><small>Online · Yearly</small><b>₹999</b><s>₹1,499</s></div>
-        <div class="plan"><small>Online · Monthly</small><b>₹99</b><s>₹149</s></div>
-      </div>
-      <p class="plans-note">Launch prices till 31 Dec 2026 · 15-day free trial, no card needed</p>
-      <div class="cta">
-        <a class="btn btn-pri" href="/familyfi/#plans">Start free trial <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="btn btn-sec" href="/familyfi/">Explore FamilyFi</a>
-        <a class="btn btn-sec" href="/familyfi/#manual">User manual</a>
-      </div>
-    </div>
-    <div class="prod-art" aria-hidden="true">
-      <div class="shot"><img src="/img/renew.jpg" alt="" loading="lazy" width="720" height="521"></div>
-      <div class="shot s2"><img src="/img/trend.jpg" alt="" loading="lazy" width="720" height="492"></div>
-    </div>
-  </article>
-
-  <div class="next">
-    <div><span class="tag soon">In development</span><h3>Our next product</h3><p>A new Nisnil app is on the way. FamilyFi customers get early access.</p></div>
-    <a class="btn btn-sec" href="https://www.instagram.com/familyfi.app/" target="_blank" rel="noopener">Follow for the launch</a>
+<section class="s" id="services" style="padding-top:16px"><div class="wrap">
+  <div class="s-head"><span class="eyebrow">Products &amp; services</span><h2>One finance partner, many jobs done well.</h2><p>Start with FamilyFi today. More AI-driven tools and services are on the way.</p></div>
+  <div class="svc">
+    <a class="sv main" href="/familyfi/">
+      <div class="pic famp"><img src="/img/app_home.jpg" alt="" loading="lazy" width="600" height="1302"></div>
+      <div class="tx"><span class="tag">Available now</span><h3>FamilyFi — Family Finance Planner</h3><p>Every rupee, loan, investment and insurance policy of your family in one private planner, saved in your own Google Drive.</p>
+        <div class="pills"><span><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg></i>Statements &amp; SMS</span><span><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></i>Budgets &amp; trends</span><span><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg></i>Loans &amp; EMIs</span><span><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></i>Insurance renewals</span><span><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></i>Live net worth</span></div>
+        <div class="price-row"><div><small>Yearly</small><b>₹999</b><s>₹1,499</s></div><div><small>Monthly</small><b>₹99</b><s>₹149</s></div><p>15-day free trial · no card needed · launch prices till 31 Dec 2026</p></div>
+        <span class="go">Open FamilyFi <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+    </a>
+    <button class="sv" type="button" data-open="dlgTax">
+      <div class="pic taxp"><div class="tc"><small>Income tax · FY 2026-27</small><div class="reg"><span>Old regime</span><i><em style="width:80%"></em></i></div><div class="reg on"><span>New regime</span><i><em style="width:55%"></em></i></div><b>New regime saves more ✓</b></div></div>
+      <div class="tx"><span class="tag soon">Coming soon</span><h3>Income Tax Calculator</h3><p>New vs old regime side by side, auto-updated after every Budget.</p><span class="go">Details <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+    </button>
+    <button class="sv" type="button" data-open="dlgLite">
+      <div class="pic litep"><div class="mini"><img src="/img/app_home.jpg" alt="" loading="lazy"></div><span class="lb">Lite</span></div>
+      <div class="tx"><span class="tag soon">Coming soon</span><h3>FamilyFi Lite</h3><p>A small mobile app for one person — spending, budget and goals on the go.</p><span class="go">Details <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+    </button>
+    <button class="sv" type="button" data-open="dlgBooks">
+      <div class="pic bookp"><div class="ledger"><div><span>Sales invoice #1042</span><b>₹18,500</b><em>✓</em></div><div><span>Office rent · Nov</span><b>₹12,000</b><em>✓</em></div><div><span>UPI receipt · client</span><b>₹6,250</b><em>✓</em></div><div class="tot"><span>Bank vs books</span><b>Matched</b></div></div></div>
+      <div class="tx"><span class="tag soon">Coming soon</span><h3>Bookkeeping service</h3><p>AI-assisted books for freelancers and small businesses, checked by a finance professional.</p><span class="go">Details <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+    </button>
+    <button class="sv" type="button" data-open="dlgTaxsvc">
+      <div class="pic taxsp"><div class="itr"><b>ITR</b><span>Income tax return</span><div class="st"><i class="d"></i>Documents<i class="d"></i>Review<i></i>Filed</div></div></div>
+      <div class="tx"><span class="tag soon">Coming soon</span><h3>Taxation service</h3><p>Income tax return filing and tax planning for individuals, with clear explanations.</p><span class="go">Details <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+    </button>
   </div>
 </div></section>
 
-<section class="s" id="how" style="padding-top:8px"><div class="wrap">
-  <div class="s-head"><span class="eyebrow">How it works</span><h2>From scattered papers to one clear view.</h2></div>
-  <div class="steps">
-    <div class="step"><h3>Bring your numbers</h3><p>Import bank and card statements, paste bank SMS, and add loans, policies and investments once.</p></div>
-    <div class="step"><h3>See the real picture</h3><p>Net worth, spending trends, EMIs and every renewal date — reconciled, with nothing counted twice.</p></div>
-    <div class="step"><h3>Decide with confidence</h3><p>Know what to cut, what to prepay and what is due next, before it becomes a problem.</p></div>
-  </div>
-</div></section>
-
-<section class="s" style="padding-top:8px"><div class="wrap">
+<section class="s why"><div class="wrap">
   <div class="band">
-    <div class="s-head"><span class="eyebrow">Our promises</span><h2>Three rules every Nisnil product follows.</h2></div>
+    <div class="s-head"><span class="eyebrow">Why Nisnil</span><h2>AI speed. Accountant care.</h2></div>
     <div class="prom">
-      <div><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></i><h3>Your data stays yours</h3><p>Your data lives in your own Google Drive. We cannot see your transactions or balances.</p></div>
-      <div><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4h12M6 9h12M6 4h3a5 5 0 0 1 0 10H6l9 7"/></svg></i><h3>Made for India</h3><p>Indian bank statements and SMS, UPI, EMIs, SIPs, LIC and health renewals, and categories that match real household life.</p></div>
-      <div><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 21V5M9 7h6M9 11h6"/></svg></i><h3>Accountant-grade accuracy</h3><p>Built with the discipline of corporate accounting: reconciled balances, a clear trail and no double counting.</p></div>
+      <div><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></i><h3>AI does the heavy lifting</h3><p>Reads statements and SMS, sorts spending, spots trends and flags what needs attention.</p></div>
+      <div><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 21V5M9 7h6M9 11h6"/></svg></i><h3>Checked like a finance team</h3><p>Reconciled balances, nothing counted twice, and a clear trail behind every number.</p></div>
+      <div><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></i><h3>Private by design</h3><p>FamilyFi keeps your data in your own Google Drive. No ads, no data selling.</p></div>
     </div>
   </div>
 </div></section>
 
-<section class="s" id="about" style="padding-top:8px"><div class="wrap about">
-  <div class="body">
-    <span class="eyebrow">About Nisnil</span>
-    <blockquote>“Families deserve the same clarity about their money that a finance team gives a company.”</blockquote>
-    <p>Nisnil AI-Finance Solutions was started in Ahmedabad by <b>Sunil Panchal</b>, a finance professional with more than 13 years in corporate finance, accounting and reporting across India and the UAE.</p>
-    <p>Most households track money across bank apps, SMS alerts, paper policies and spreadsheets. Our products bring that together — affordable, private and easy enough for the whole family.</p>
-  </div>
-  <div class="facts-card">
-    <div><span>Business</span><b>Nisnil AI-Finance Solutions</b></div>
-    <div><span>Founder</span><b>Sunil Panchal</b></div>
-    <div><span>Based in</span><b>Ahmedabad, Gujarat</b></div>
-    <div><span>Products</span><b>FamilyFi – Family Finance Planner</b></div>
-    <div><span>Support</span><b>familyfi.app@gmail.com</b></div>
-  </div>
-</div></section>
-
-<section class="s" id="contact" style="padding-top:8px"><div class="wrap">
-  <div class="s-head"><span class="eyebrow">Contact</span><h2>Talk to us.</h2><p>We reply to every message, usually within one working day.</p></div>
-  <div class="contact">
-    <div><h3>Email</h3><p>Questions, plans and support</p><span class="v" id="em">familyfi.app@gmail.com</span><button class="copy" type="button" data-copy="em">Copy email</button></div>
-    <div><h3>Instagram</h3><p>Money tips, Reels and product news</p><a class="v" href="https://www.instagram.com/familyfi.app/" target="_blank" rel="noopener">@familyfi.app</a></div>
-    <div><h3>Help &amp; manual</h3><p>Step-by-step setup and answers</p><a class="v" href="/familyfi/#manual">FamilyFi user manual</a></div>
-  </div>
-  <div class="final">
-    <h2>See your family’s money clearly — free for 15 days.</h2>
-    <p>No card needed. Sign in with Gmail, import one statement, and you’ll see the difference in ten minutes.</p>
-    <div class="cta"><a class="btn btn-pri" href="/familyfi/#plans">Start your free trial <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+<section class="s abt" id="about"><div class="wrap">
+  <div class="closer">
+    <div class="who">
+      <span class="eyebrow">About Nisnil</span>
+      <blockquote>“Families deserve the same clarity about their money that a finance team gives a company.”</blockquote>
+      <p>Nisnil AI-Finance Solutions is an Ahmedabad-based business run by <b>Sunil Panchal</b>, building AI-driven finance tools and services for Indian households and small businesses.</p>
+      <button class="lnk" type="button" data-open="dlgAbout">About &amp; seller details <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+    </div>
+    <div class="talk" id="contact">
+      <h2>Talk to us.</h2>
+      <p>Questions about FamilyFi, or want early access to our next tools and services? We reply within one working day.</p>
+      <p class="links"><span id="em">familyfi.app@gmail.com</span> <button class="copy" type="button" data-copy="em">Copy</button> · <a href="https://www.instagram.com/familyfi.app/" target="_blank" rel="noopener">@familyfi.app</a></p>
+    </div>
   </div>
 </div></section>
 </main>
 
-<footer class="site-foot"><div class="wrap"><div class="grid"><div class="brand"><b>nisnil</b>Nisnil AI-Finance Solutions builds simple, private finance software for Indian households. Ahmedabad, Gujarat, India.</div><div><h4>Products</h4><ul><li><a href="/familyfi/">FamilyFi – Family Finance Planner</a></li><li><a href="/familyfi/#plans">Pricing &amp; free trial</a></li><li><a href="/familyfi/#manual">User manual</a></li></ul></div><div><h4>Policies</h4><ul><li><a href="/terms/">Terms of use (online subscription)</a></li><li><a href="/privacy/">Privacy policy</a></li><li><a href="/refund/">Refund policy</a></li><li><a href="/disclaimer/">Disclaimer</a></li></ul></div></div><div class="base"><span>© 2026 Nisnil AI-Finance Solutions · Sunil Panchal</span><span>familyfi.app@gmail.com · <a href="https://www.instagram.com/familyfi.app/" target="_blank" rel="noopener">@familyfi.app</a></span></div></div></footer>
+<dialog id="dlgTax" class="dlg"><form method="dialog"><button class="x" aria-label="Close">×</button></form>
+  <span class="tag soon">Coming soon</span><h2>Income Tax Calculator</h2>
+  <p>Enter your salary and deductions once and see your tax under the <b>new</b> and <b>old</b> regimes side by side, with the difference in rupees.</p>
+  <ul class="dlist"><li>New vs old regime comparison, with the better choice highlighted</li><li>Slabs, rebate, standard deduction and cess updated automatically after every Union Budget</li><li>Common deductions explained in plain language (80C, 80D, HRA, home loan interest)</li><li>Works on phone, no sign-up needed to try</li></ul>
+  <p class="dnote">Want early access? Email <b>familyfi.app@gmail.com</b> with “Tax calculator”.</p>
+</dialog>
+<dialog id="dlgLite" class="dlg"><form method="dialog"><button class="x" aria-label="Close">×</button></form>
+  <span class="tag soon">Coming soon</span><h2>FamilyFi Lite</h2>
+  <p>A smaller, phone-first version of FamilyFi for one person.</p>
+  <ul class="dlist"><li>Add spending in seconds, or from a bank SMS</li><li>Monthly budget and simple savings goals</li><li>Your data in your own Google Drive, like FamilyFi</li><li>Move up to full FamilyFi when your family joins</li></ul>
+  <p class="dnote">Want early access? Email <b>familyfi.app@gmail.com</b> with “FamilyFi Lite”.</p>
+</dialog>
+<dialog id="dlgBooks" class="dlg"><form method="dialog"><button class="x" aria-label="Close">×</button></form>
+  <span class="tag soon">Coming soon</span><h2>Bookkeeping service</h2>
+  <p>For freelancers, consultants and small businesses that want clean books without hiring a full-time accountant.</p>
+  <ul class="dlist"><li>Bank and UPI entries sorted with AI, then reviewed by a finance professional</li><li>Monthly bank reconciliation and a simple profit &amp; loss</li><li>Records kept ready for income tax filing</li></ul>
+  <p class="dnote">Want early access? Email <b>familyfi.app@gmail.com</b> with “Bookkeeping”.</p>
+</dialog>
+<dialog id="dlgTaxsvc" class="dlg"><form method="dialog"><button class="x" aria-label="Close">×</button></form>
+  <span class="tag soon">Coming soon</span><h2>Taxation service</h2>
+  <p>Help with income tax for individuals, explained in plain language.</p>
+  <ul class="dlist"><li>Income tax return (ITR) preparation and filing</li><li>Choosing between the new and old regime</li><li>A simple checklist of the documents you need</li></ul>
+  <p class="dnote">Want early access? Email <b>familyfi.app@gmail.com</b> with “Taxation”.</p>
+</dialog>
+<dialog id="dlgAbout" class="dlg" aria-labelledby="dlgAt"><form method="dialog"><button class="x" aria-label="Close">×</button></form>
+  <h2 id="dlgAt">About &amp; seller details</h2>
+  <p>Nisnil AI-Finance Solutions is an Ahmedabad-based business run by <b>Sunil Panchal</b>. We build AI-driven finance tools and services for Indian families, individuals and small businesses.</p>
+  <dl class="dl">
+    <dt>Business</dt><dd>Nisnil AI-Finance Solutions</dd>
+    <dt>Type</dt><dd>Sole proprietorship</dd>
+    <dt>Proprietor</dt><dd>Sunil Panchal</dd>
+    <dt>Location</dt><dd>Ahmedabad, Gujarat, India</dd>
+    <dt>Email</dt><dd>familyfi.app@gmail.com</dd>
+    <dt>Payments</dt><dd>Razorpay — we never see card or bank details</dd>
+    <dt>GST</dt><dd>Not registered; prices are final, no GST charged</dd>
+  </dl>
+  <h3>Grievance officer</h3>
+  <p>Sunil Panchal, Proprietor · familyfi.app@gmail.com — acknowledged within 48 hours, resolved within 30 days. A postal address for legal notices is shared on request by email.</p>
+  <p class="dpol"><a href="/terms/">Terms</a> · <a href="/privacy/">Privacy</a> · <a href="/refund/">Refund &amp; cancellation</a> · <a href="/disclaimer/">Disclaimer</a> · <a href="/about/">Open as page</a></p>
+</dialog>
+
+<footer class="site-foot"><div class="wrap"><div class="grid"><div class="brand"><b>nisnil</b>AI-driven financial services for Indian families, individuals and small businesses.</div><div><h4>Products &amp; services</h4><ul><li><a href="/familyfi/">FamilyFi — available now</a></li><li><a href="/#services">Tax calculator — soon</a></li><li><a href="/#services">Bookkeeping &amp; taxation — soon</a></li></ul></div><div><h4>Business &amp; policies</h4><ul><li><a href="/about/">About &amp; seller details</a></li><li><a href="/terms/">Terms of use</a></li><li><a href="/privacy/">Privacy policy</a></li><li><a href="/refund/">Refund & cancellation</a></li><li><a href="/disclaimer/">Disclaimer</a></li></ul></div></div><div class="base"><span>© 2026 Nisnil AI-Finance Solutions · Sunil Panchal · Not registered under GST</span><span>familyfi.app@gmail.com · <a href="https://www.instagram.com/familyfi.app/" target="_blank" rel="noopener">@familyfi.app</a></span></div></div></footer>
 <script>
+document.querySelectorAll('[data-open]').forEach(function(b){b.addEventListener('click',function(){var d=document.getElementById(b.dataset.open);if(d&&d.showModal){d.showModal();document.body.classList.add('modal');}else{location.href=b.dataset.open==='dlgAbout'?'/about/':'/familyfi/';}});});
+document.querySelectorAll('dialog').forEach(function(d){d.addEventListener('close',function(){document.body.classList.remove('modal')});d.addEventListener('click',function(e){if(e.target===d)d.close();});});
+document.querySelectorAll('a[href="/about/"].l,.site-nav a[href="#about"]').forEach(function(a){a.addEventListener('click',function(e){var d=document.getElementById('dlgAbout');if(d&&d.showModal){e.preventDefault();d.showModal();document.body.classList.add('modal');}});});
 document.querySelectorAll('[data-copy]').forEach(function(b){b.addEventListener('click',function(){
   var t=document.getElementById(b.dataset.copy).textContent;
-  if(navigator.clipboard){navigator.clipboard.writeText(t).then(function(){b.textContent='Copied ✓';setTimeout(function(){b.textContent='Copy email'},1600)},function(){})}
+  if(navigator.clipboard){navigator.clipboard.writeText(t).then(function(){b.textContent='Copied ✓';setTimeout(function(){b.textContent='Copy'},1600)},function(){})}
 });});
 </script>
-<div id="nnCookie" class="nn-ck" role="dialog" aria-live="polite" aria-label="Cookie choice" hidden>
+<script src="/assets/anim.js?v=ce940e37" defer></script><div id="nnCookie" class="nn-ck" role="dialog" aria-live="polite" aria-label="Cookie choice" hidden>
 <p>We use Google Analytics cookies to count visits and improve this website. The FamilyFi app itself has no trackers. <a href="/privacy/">Privacy policy</a></p>
 <div class="nn-ck-b"><button type="button" data-c="no">Decline</button><button type="button" data-c="yes" class="pri">Accept</button></div></div>
 <style>

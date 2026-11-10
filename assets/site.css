@@ -12,7 +12,8 @@ img{max-width:100%;height:auto;display:block}
 a{color:var(--green)}
 h1,h2,h3{font-family:Fraunces,Georgia,"Times New Roman",serif;font-weight:600;line-height:1.12;letter-spacing:-.015em;margin:0;text-wrap:balance;color:var(--ink)}
 p{margin:0}
-.wrap{max-width:1140px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1760px;margin:0 auto;padding-left:max(clamp(16px,4.5vw,88px),env(safe-area-inset-left,0px));padding-right:max(clamp(16px,4.5vw,88px),env(safe-area-inset-right,0px))}
+html,body{overflow-x:hidden}
 .eyebrow{display:inline-flex;align-items:center;gap:8px;font:600 12px/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--green)}
 .eyebrow:before{content:"";width:18px;height:2px;background:var(--saffron);border-radius:2px}
 
@@ -56,3 +57,42 @@ p{margin:0}
 .doc-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
 .doc-links a{font:500 13.5px Inter,sans-serif;text-decoration:none;color:var(--green);background:var(--green-3);border-radius:999px;padding:6px 12px}
 .doc-links a[aria-current]{background:var(--green);color:#fff}
+
+.ffback{background:var(--green-2);color:#bcd5cd;font-size:12.5px}
+.ffback .wrap{display:flex;gap:12px;align-items:center;justify-content:space-between;min-height:34px}
+.ffback a{color:#fff;font-weight:600;text-decoration:none;white-space:nowrap}
+.ffback span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+@media (max-width:520px){.ffback span{display:none}}
+.subnav .pname{display:inline-flex;align-items:center;gap:9px}
+.subnav .pname img{width:30px;height:30px;border-radius:9px}
+.ff-foot .grid{grid-template-columns:1.3fr 1fr 1fr}
+
+/* ---------- motion (respects reduced-motion) ---------- */
+@media (prefers-reduced-motion:no-preference){
+  .anim .rv{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
+  .anim .rv.in{opacity:1;transform:none}
+  .anim .hero h1,.anim .hero .lead,.anim .hero .cta,.anim .hero .eyebrow,.anim .hero .pill,.anim .hero .facts,.anim .hero .ctas,.anim .hero .hnote{animation:upIn .8s cubic-bezier(.2,.7,.2,1) both}
+  .anim .hero .eyebrow,.anim .hero .pill{animation-delay:.05s}.anim .hero h1{animation-delay:.15s}.anim .hero .lead{animation-delay:.3s}
+  .anim .hero .cta,.anim .hero .ctas{animation-delay:.45s}.anim .hero .facts,.anim .hero .hnote{animation-delay:.6s}
+  .anim .collage,.anim .stage{animation:popIn 1s .25s cubic-bezier(.2,.7,.2,1) both}
+  .anim .ccard.t1,.anim .mock .c1{animation:floaty 5s ease-in-out 1.2s infinite}
+  .anim .ccard.t2,.anim .mock .c2{animation:floaty 6s ease-in-out 1.6s infinite reverse}
+  .anim .ccard.t3{animation:floaty 5.5s ease-in-out 2s infinite}
+  .anim .cphone,.anim .mock .mphone{animation:drift 7s ease-in-out infinite}
+  .anim .ccard .bar em,.anim .reg i em{transform-origin:left;animation:grow 1.4s 1s cubic-bezier(.2,.7,.2,1) both}
+  .anim .rv .reg i em{animation:none;transform:scaleX(0);transform-origin:left;transition:transform 1.2s .3s cubic-bezier(.2,.7,.2,1)}
+  .anim .rv.in .reg i em{transform:none}
+  .anim .sv{transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s,opacity .7s}
+  .anim .sv:hover{transform:translateY(-6px);box-shadow:0 2px 4px rgba(19,35,31,.06),0 26px 50px -22px rgba(19,35,31,.35)}
+  .anim .sv .pic>*{transition:transform .5s cubic-bezier(.2,.7,.2,1)}.anim .sv:hover .pic>*{transform:scale(1.04)}
+  .anim .tag:not(.soon):before{animation:pulse 1.8s ease-in-out infinite}
+  .anim .btn-pri{background-size:200% 100%}
+  .anim .btn-pri:hover{transform:translateY(-1px)}
+  .anim .ledger.go div{animation:upIn .5s both}.anim .ledger div:nth-child(2){animation-delay:.15s}.anim .ledger div:nth-child(3){animation-delay:.3s}.anim .ledger div:nth-child(4){animation-delay:.45s}
+}
+@keyframes upIn{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+@keyframes popIn{from{opacity:0;transform:scale(.94) translateY(20px)}to{opacity:1;transform:none}}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes drift{0%,100%{translate:0 0}50%{translate:0 -8px}}
+@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(14,90,79,.45)}50%{box-shadow:0 0 0 6px rgba(14,90,79,0)}}

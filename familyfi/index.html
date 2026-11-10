@@ -14,7 +14,7 @@
 <meta property="og:title" content="FamilyFi – your family's money, finally in one place">
 <meta property="og:description" content="Insurance, loans, investments and spending for Indian families. Private: your data stays in your own Google Drive. 15-day free trial.">
 <link rel="icon" href="/img/nisnil.png">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="/assets/site.css?v=7d03d9d5">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="/assets/site.css?v=ce940e37">
 <script>
 /* ===================== EDIT HERE (owner settings) ===================== */
 const SITE = {
@@ -52,8 +52,9 @@ h2.big{font-size:clamp(32px,5.4vw,54px)}
 .lnk:hover{text-decoration:underline}
 .hnote{color:var(--muted);font-size:14px;margin-top:14px}
 .stage{position:relative;margin-top:44px;display:flex;justify-content:center}
-.stage:before{content:"";position:absolute;left:50%;bottom:0;width:min(760px,100%);height:72%;transform:translateX(-50%);background:var(--green);border-radius:40px 40px 0 0}
-.hero{position:relative;z-index:2}.phone{position:relative;width:min(290px,70vw);border-radius:44px;background:#13231f;padding:11px;box-shadow:0 40px 80px -30px rgba(10,70,62,.55);margin-bottom:-40px}
+.stage:before{content:"";position:absolute;left:50%;bottom:0;width:100vw;height:34%;transform:translateX(-50%);background:var(--green);border-radius:50% 50% 0 0/60px 60px 0 0}
+.hero{overflow-x:clip}.stage{padding-bottom:36px}
+.hero{position:relative;z-index:2}.phone{position:relative;width:min(290px,70vw);border-radius:44px;background:#13231f;padding:11px;box-shadow:0 40px 80px -30px rgba(0,0,0,.45);margin-bottom:0}
 .phone img{border-radius:34px;width:100%}
 .facts{background:var(--green);color:#dfece7;padding-block:72px 40px}
 .facts ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:18px;text-align:center}
@@ -189,7 +190,20 @@ dialog.sheet::backdrop{background:rgba(19,35,31,.5);backdrop-filter:blur(4px);-w
 .tbl td:first-child{font-weight:600}
 .check{list-style:none;padding-left:0!important}.check li{padding-left:28px;position:relative}
 .check li:before{content:"";position:absolute;left:0;top:4px;width:16px;height:16px;border:2px solid var(--green);border-radius:5px}
+
+.mock{position:relative;display:flex;justify-content:center;padding:18px 0 8px}
+.mock .mphone{position:relative;width:min(270px,64vw);border-radius:42px;background:#13231f;padding:10px;box-shadow:0 34px 70px -28px rgba(0,0,0,.45)}
+.mock .mphone img{display:block;width:100%;height:auto;border-radius:32px}
+.mock .mchip{position:absolute;z-index:3;background:#fff;border:1px solid var(--line);border-radius:14px;padding:9px 13px;box-shadow:0 14px 30px -14px rgba(19,35,31,.35);font:500 12.5px/1.35 Inter,sans-serif;color:var(--muted);text-align:left}
+.mock .mchip b{display:block;color:var(--ink);font-weight:600;font-size:13.5px}
+.mock .c1{left:max(0px,calc(50% - 205px));top:22%}
+.mock .c2{right:max(0px,calc(50% - 205px));top:52%}
+.mock .c2 b{color:var(--green)}
+.mock .c3{left:50%;bottom:-6px;transform:translateX(-50%);background:var(--saffron-2);border-color:#f0d9ae;color:#7a4b06;font-weight:600;padding:5px 12px;border-radius:999px}
+@media (max-width:420px){.mock .c1{left:0}.mock .c2{right:0}.mock .mchip{font-size:11.5px;padding:7px 10px}.mock .mchip b{font-size:12.5px}}
+.stage .mock{z-index:1}
 </style>
+<script>if(window.matchMedia&&!matchMedia('(prefers-reduced-motion: reduce)').matches&&'IntersectionObserver' in window)document.documentElement.classList.add('anim')</script>
 <script>
 window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
 gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',wait_for_update:500});
@@ -200,10 +214,10 @@ gtag('js',new Date());gtag('config','G-R91PK86YHW');
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-R91PK86YHW"></script>
 </head>
 <body>
-<header class="site-head"><div class="wrap"><a class="logo" href="/" aria-label="Nisnil AI-Finance Solutions home"><img class="logo-mark" src="/img/nisnil.png" alt=""><span class="logo-text"><b>nisnil</b><small>AI-Finance Solutions</small></span></a><nav class="site-nav"><a class="l" href="/#products">Products</a><a class="l" href="/#about">About</a><a class="l" href="/#contact">Contact</a><a class="btn btn-pri btn-sm" href="/familyfi/#plans">Try FamilyFi</a></nav></div></header>
+<div class="ffback"><div class="wrap"><a href="/">← nisnil.co.in</a><span>FamilyFi is a product of Nisnil AI-Finance Solutions</span></div></div>
 <nav class="subnav" aria-label="FamilyFi"><div class="wrap">
-  <a class="pname" href="#top">FamilyFi</a>
-  <a class="l" href="#features">Features</a><a class="l" href="#privacy">Privacy</a><a class="l" href="#plans">Pricing</a><a class="l" href="#help">Help</a>
+  <a class="pname" href="#top"><img src="/img/logo.jpg" alt="">FamilyFi</a>
+  <a class="l" href="#features">Features</a><a class="l" href="#privacy">Privacy</a><a class="l" href="#plans">Pricing</a><a class="l" href="#help">Help</a><a class="l home" href="/" title="Back to nisnil.co.in">nisnil ↗</a>
   <a class="btn btn-pri" data-go="trial" href="#plans">Try free</a>
 </div></nav>
 
@@ -217,7 +231,7 @@ gtag('js',new Date());gtag('config','G-R91PK86YHW');
     <button class="lnk" type="button" data-open="start">How to start <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
   </div>
   <p class="hnote">No card needed · Phone and laptop · Sign in with Gmail</p>
-  <div class="stage"><div class="phone"><img src="/img/hero.jpg" width="560" height="960" alt="FamilyFi home screen with a sample family"></div></div>
+  <div class="stage"><div class="mock"><div class="mphone"><img src="/img/app_home.jpg" width="600" height="1302" alt="FamilyFi home screen with a sample family"></div><div class="mchip c1"><b>Health cover</b><span>renews in 30 days</span></div><div class="mchip c2"><b>Net worth</b><span>₹41.4 L today</span></div><div class="mchip c3">Sample data</div></div></div>
 </div></section>
 <div class="facts"><div class="wrap"><ul>
   <li><b>15 days</b><span>free trial, no card</span></li>
@@ -233,7 +247,7 @@ gtag('js',new Date());gtag('config','G-R91PK86YHW');
   </div>
   <div class="rail" id="rail">
     <article class="card"><small>Insurance</small><h3>Every renewal, before it’s due.</h3>
-      <div class="pic"><img src="/img/renew.jpg" width="720" height="521" alt="Renewal calendar" loading="lazy"></div>
+      <div class="pic"><img src="/img/renew.jpg" width="720" height="801" alt="Renewal calendar" loading="lazy"></div>
       <button class="plus" type="button" aria-label="More about insurance"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
       <div class="more"><p class="fsub">Term, health, car and LIC policies with cover, nominee, claim contacts and the policy copy itself.</p>
         <ul><li>Renewal reminders on your home screen, before the due date.</li><li>Tap <b>Paid</b> and the next date is set for you.</li><li>See who in the family is covered, and for how much.</li><li>Attach the policy PDF so your family can find it when it matters.</li></ul></div></article>
@@ -258,7 +272,7 @@ gtag('js',new Date());gtag('config','G-R91PK86YHW');
       <div class="more"><p class="fsub">Budgets, month-to-month comparison and every credit-card due date.</p>
         <ul><li>Budget versus actual before the month ends.</li><li>Card billing cycles and due dates, so you never pay interest.</li><li>Money still to come and go this month, and expected funds for 12 months.</li></ul></div></article>
     <article class="card"><small>Trends</small><h3>Spot the expense that keeps rising.</h3>
-      <div class="pic"><img src="/img/trend.jpg" width="720" height="492" alt="Expense trends heatmap" loading="lazy"></div>
+      <div class="pic"><img src="/img/trend.jpg" width="720" height="762" alt="Where to cut first: expense trends" loading="lazy"></div>
       <button class="plus" type="button" aria-label="More about trends"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
       <div class="more"><p class="fsub">A heatmap of every category, month by month.</p>
         <ul><li>See which expenses grew and by how much.</li><li>Compare any two months side by side.</li><li>Find what you can trim without guessing.</li></ul></div></article>
@@ -278,7 +292,7 @@ gtag('js',new Date());gtag('config','G-R91PK86YHW');
 
 <section id="plans" class="center" style="padding-top:0"><div class="wrap">
   <h2 class="big">Try free for 15 days.<br>Then choose.</h2>
-  <p class="lede">All features in every plan. Prices in ₹.</p>
+  <p class="lede">All features in every plan. Prices in ₹ — <b>final price, no GST or hidden charges. One-time payment for the period: no auto-renewal, no card saved.</b></p>
   <div class="plans">
     <div class="plan best"><span class="tag">Best value</span><h3>Online · Yearly</h3><div class="for">Phone + laptop · all updates</div>
       <div class="price"><b data-p="yearly">₹999</b><s data-r="yearly">₹1,499</s><small>/ year</small></div><div class="save" data-s="yearly"></div>
@@ -307,7 +321,7 @@ gtag('js',new Date());gtag('config','G-R91PK86YHW');
   <div class="ctas"><a class="btn btn-pri" data-go="trial" href="#plans">Start free trial</a><a class="lnk" href="#plans">See pricing <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a></div>
 </div></section>
 </main>
-<footer class="site-foot"><div class="wrap"><div class="grid"><div class="brand"><b>nisnil</b>Nisnil AI-Finance Solutions builds simple, private finance software for Indian households. Ahmedabad, Gujarat, India.</div><div><h4>Products</h4><ul><li><a href="/familyfi/">FamilyFi – Family Finance Planner</a></li><li><a href="/familyfi/#plans">Pricing &amp; free trial</a></li><li><a href="/familyfi/#manual">User manual</a></li></ul></div><div><h4>Policies</h4><ul><li><a href="/terms/">Terms of use (online subscription)</a></li><li><a href="/privacy/">Privacy policy</a></li><li><a href="/refund/">Refund policy</a></li><li><a href="/disclaimer/">Disclaimer</a></li></ul></div></div><div class="base"><span>© 2026 Nisnil AI-Finance Solutions · Sunil Panchal</span><span>familyfi.app@gmail.com · <a href="https://www.instagram.com/familyfi.app/" target="_blank" rel="noopener">@familyfi.app</a></span></div></div></footer>
+<footer class="site-foot ff-foot"><div class="wrap"><div class="grid"><div class="brand"><b>FamilyFi</b>Family Finance Planner — private, in your own Google Drive.</div><div><h4>FamilyFi</h4><ul><li><a href="/familyfi/#plans">Pricing &amp; free trial</a></li><li><a href="/familyfi/#manual">User manual</a></li><li><a href="/familyfi/#faq">Questions</a></li></ul></div><div><h4>Policies</h4><ul><li><a href="/terms/">Terms of use</a></li><li><a href="/privacy/">Privacy policy</a></li><li><a href="/refund/">Refund &amp; cancellation</a></li><li><a href="/disclaimer/">Disclaimer</a></li></ul></div></div><div class="base"><span>FamilyFi by Nisnil AI-Finance Solutions · © 2026 Sunil Panchal</span><span><a href="/">← Back to nisnil.co.in</a></span></div></div></footer>
 <div class="sticky" id="sticky"><a class="btn btn-pri" data-go="trial" href="#plans">Start 15-day free trial</a></div>
 
 <!-- ============ pop-up panels ============ -->
@@ -494,7 +508,7 @@ gtag('js',new Date());gtag('config','G-R91PK86YHW');
   else st.classList.add('on');
 })();
 </script>
-<div id="nnCookie" class="nn-ck" role="dialog" aria-live="polite" aria-label="Cookie choice" hidden>
+<script src="/assets/anim.js?v=ce940e37" defer></script><div id="nnCookie" class="nn-ck" role="dialog" aria-live="polite" aria-label="Cookie choice" hidden>
 <p>We use Google Analytics cookies to count visits and improve this website. The FamilyFi app itself has no trackers. <a href="/privacy/">Privacy policy</a></p>
 <div class="nn-ck-b"><button type="button" data-c="no">Decline</button><button type="button" data-c="yes" class="pri">Accept</button></div></div>
 <style>
