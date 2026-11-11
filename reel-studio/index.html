@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>FamilyFi Reel Studio</title>
+<style>
+@font-face{font-family:Anton;src:url(fonts/anton-latin-400-normal.woff2) format('woff2');font-weight:400;unicode-range:U+0000-00FF,U+2000-206F}
+@font-face{font-family:Fraunces;src:url(fonts/fraunces-latin-600-normal.woff2) format('woff2');font-weight:600}
+@font-face{font-family:Fraunces;src:url(fonts/fraunces-latin-700-normal.woff2) format('woff2');font-weight:700}
+@font-face{font-family:Inter;src:url(fonts/inter-latin-400-normal.woff2) format('woff2');font-weight:400;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:Inter;src:url(fonts/inter-latin-ext-400-normal.woff2) format('woff2');font-weight:400;unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:Inter;src:url(fonts/inter-latin-600-normal.woff2) format('woff2');font-weight:600;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:Inter;src:url(fonts/inter-latin-ext-600-normal.woff2) format('woff2');font-weight:600;unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:Inter;src:url(fonts/inter-latin-800-normal.woff2) format('woff2');font-weight:800;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:Inter;src:url(fonts/inter-latin-ext-800-normal.woff2) format('woff2');font-weight:800;unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+
+:root{
+  --paper:#f7f4ee; --ink:#13231f; --ink-2:#2d3c38; --green:#0e5a4f; --green-2:#0a463e; --deep:#06231f;
+  --green-3:#e3efe9; --saffron:#e0a03a; --accent:#e0a03a;
+  --head:Anton,"Inter",Impact,sans-serif; --body:Inter,system-ui,sans-serif; --serif:Fraunces,Georgia,serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#111;color:#fff;font-family:var(--body)}
+body.preview{display:flex;flex-direction:column;align-items:center;gap:14px;padding:16px;min-height:100vh;background:#1b1f1e}
+
+/* ---------- preview controls (hidden while rendering) ---------- */
+.ctl{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:center;font:14px var(--body);color:#ddd;max-width:100%}
+.ctl select,.ctl button{font:600 14px var(--body);padding:8px 12px;border-radius:10px;border:1px solid #444;background:#2a302e;color:#fff}
+.ctl input[type=range]{width:min(360px,70vw)}
+.viewport{width:min(405px,calc(100vw - 32px));aspect-ratio:9/16;position:relative;overflow:hidden;border-radius:18px;box-shadow:0 20px 60px #0008}
+.viewport #reel{position:absolute;left:0;top:0;transform-origin:0 0}
+.cap{max-width:560px;width:100%;white-space:pre-wrap;font:13px/1.5 var(--body);color:#cfd8d5;background:#262c2a;border-radius:12px;padding:12px 14px}
+.hint{font:12px var(--body);color:#8a9692;text-align:center;max-width:560px}
+body.render .ctl,body.render .cap,body.render .hint{display:none}
+body.render .viewport{width:1080px;height:1920px;border-radius:0;box-shadow:none}
+
+/* ---------- the 1080x1920 reel ---------- */
+#reel{width:1080px;height:1920px;overflow:hidden;position:relative;background:var(--deep)}
+.layer{position:absolute;inset:0}
+.bg-dark{background:radial-gradient(120% 80% at 50% 30%,#13705f 0%,#0a463e 45%,#041a17 100%)}
+.bg-paper{background:radial-gradient(120% 80% at 50% 25%,#ffffff 0%,#f7f4ee 55%,#ece4d4 100%)}
+.persp{perspective:1500px;perspective-origin:50% 42%}
+.p3d{transform-style:preserve-3d}
+.abs{position:absolute;left:0;top:0;will-change:transform,opacity}
+
+/* 3D floor grid */
+.floor{position:absolute;left:-1200px;width:3480px;height:2600px;top:1050px;transform-origin:50% 0;
+  background-image:linear-gradient(rgba(224,160,58,.38) 3px,transparent 3px),linear-gradient(90deg,rgba(224,160,58,.38) 3px,transparent 3px);
+  background-size:160px 160px;-webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 25%,#000 60%,transparent 100%);mask-image:linear-gradient(to bottom,transparent 0%,#000 25%,#000 60%,transparent 100%)}
+
+/* coins */
+.coin{width:120px;height:120px;border-radius:50%;display:grid;place-items:center;font:800 64px/1 var(--body);color:#7a4b06;
+  background:radial-gradient(circle at 35% 30%,#fff3c9 0%,#f3c463 35%,#d18f22 75%,#9b6411 100%);box-shadow:inset 0 0 0 8px rgba(255,255,255,.25),inset 0 -10px 18px rgba(0,0,0,.25)}
+
+/* brand chip */
+.brand{position:absolute;left:70px;top:150px;display:flex;align-items:center;gap:16px;padding:12px 24px 12px 12px;border-radius:999px;background:rgba(255,255,255,.12);backdrop-filter:blur(8px);border:2px solid rgba(255,255,255,.22);z-index:50}
+.brand img{width:64px;height:64px;border-radius:50%}
+.brand b{font:700 36px/1 var(--serif);letter-spacing:-.01em}
+.brand span{font:600 24px/1 var(--body);opacity:.8}
+.brand.on-paper{background:rgba(14,90,79,.08);border-color:rgba(14,90,79,.2);color:var(--ink)}
+.progress{position:absolute;left:0;top:0;height:10px;background:var(--accent);z-index:60}
+
+/* hook */
+.hook{position:absolute;left:0;right:0;top:470px;text-align:center}
+.hline{display:block;font:400 150px/1.02 var(--head);text-transform:uppercase;letter-spacing:.01em;color:#fff;text-shadow:0 8px 0 rgba(0,0,0,.25),0 30px 60px rgba(0,0,0,.45);white-space:nowrap;margin:0 auto;width:max-content}
+.hl{color:var(--deep);background:var(--accent);padding:0 22px;border-radius:18px;display:inline-block;transform:rotate(-2deg);box-shadow:0 14px 0 rgba(0,0,0,.25)}
+.hsub{position:absolute;left:80px;right:80px;top:1220px;text-align:center;font:600 50px/1.3 var(--body);color:#fff}
+.hsub i{font-style:normal;background:rgba(0,0,0,.35);padding:10px 26px;border-radius:20px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+
+/* pains */
+.eyebrow{position:absolute;left:0;right:0;top:330px;text-align:center;font:400 96px/1 var(--head);text-transform:uppercase;color:#fff}
+.eyebrow em{font-style:normal;color:var(--accent)}
+.pain{position:absolute;left:110px;width:860px;height:230px;border-radius:40px;background:linear-gradient(135deg,#ffffff 0%,#f4efe6 100%);color:var(--ink);
+  display:flex;align-items:center;gap:34px;padding:0 44px;box-shadow:0 40px 80px rgba(0,0,0,.45),0 0 0 3px rgba(255,255,255,.6) inset;backface-visibility:hidden}
+.pain .emo{font-size:104px;line-height:1;flex:none;width:130px;text-align:center}
+.pain .txt{font:700 50px/1.2 var(--body);letter-spacing:-.01em}
+.pain .x{position:absolute;right:-26px;top:-26px;width:92px;height:92px;border-radius:50%;background:#d8452f;color:#fff;font:800 56px/92px var(--body);text-align:center;box-shadow:0 10px 24px rgba(0,0,0,.35)}
+
+/* phone */
+.sol{position:absolute;left:0;right:0;top:300px;text-align:center;font:400 92px/1 var(--head);text-transform:uppercase;color:#fff}
+.sol em{font-style:normal;color:var(--accent)}
+.phone{position:absolute;left:250px;top:430px;width:580px;height:1000px}
+.phone .slab{position:absolute;inset:0;border-radius:86px;background:linear-gradient(135deg,#2c3532,#0b0f0e);transform:translateZ(-34px);box-shadow:0 60px 120px rgba(0,0,0,.6)}
+.phone .edge{position:absolute;inset:0;border-radius:86px;background:#3a4542;transform:translateZ(-17px)}
+.phone .body{position:absolute;inset:0;border-radius:86px;background:#0b0f0e;padding:26px;box-shadow:inset 0 0 0 4px #4b5754}
+.phone .scr{position:relative;width:100%;height:100%;border-radius:62px;overflow:hidden;background:#fff}
+.phone .scr img{width:100%;display:block}
+.phone .notch{position:absolute;left:50%;top:22px;width:150px;height:40px;margin-left:-75px;border-radius:30px;background:#0b0f0e;z-index:2}
+.phone .glare{position:absolute;top:-20%;left:0;width:45%;height:140%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.45),transparent);transform:skewX(-18deg);z-index:3}
+.ring{position:absolute;border:8px solid var(--accent);border-radius:30px;z-index:4;box-shadow:0 0 0 9999px rgba(0,0,0,0)}
+.feat{position:absolute;left:150px;top:900px;width:780px;border-radius:36px;background:#fff;padding:22px;box-shadow:0 50px 110px rgba(0,0,0,.55);color:var(--ink)}
+.feat img{width:100%;border-radius:22px;display:block}
+.feat .lab{margin-top:18px;font:700 44px/1.2 var(--body);text-align:center;color:var(--green)}
+.feat .tag{display:block;width:max-content;margin:18px auto 0;background:var(--accent);color:var(--deep);font:800 30px/1 var(--body);padding:14px 22px;border-radius:999px;letter-spacing:.06em;text-transform:uppercase}
+.sample{position:absolute;right:80px;top:1440px;font:600 26px var(--body);color:rgba(255,255,255,.65)}
+
+/* benefits */
+.bwrap{position:absolute;left:90px;right:90px;top:300px;color:var(--ink)}
+.count{text-align:center}
+.count .lbl{font:600 40px/1.2 var(--body);color:var(--ink-2)}
+.count .num{font:700 168px/1.05 var(--serif);color:var(--green);letter-spacing:-.03em;margin-top:10px;white-space:nowrap}
+.tick{position:absolute;left:0;right:0;height:170px;border-radius:34px;background:#fff;display:flex;align-items:center;gap:30px;padding:0 40px;
+  box-shadow:0 30px 60px -20px rgba(19,35,31,.35),0 0 0 3px rgba(14,90,79,.12) inset;font:700 46px/1.2 var(--body);color:var(--ink)}
+.tick .ok{flex:none;width:96px;height:96px;border-radius:28px;background:var(--green);color:#fff;font:800 60px/96px var(--body);text-align:center}
+
+/* CTA */
+.cta{position:absolute;left:90px;right:90px;top:280px;text-align:center;color:var(--ink)}
+.cta .logo{width:190px;height:190px;border-radius:50%;margin:0 auto;box-shadow:0 30px 60px -10px rgba(14,90,79,.5)}
+.cta h1{font:400 128px/1 var(--head);text-transform:uppercase;margin-top:40px;color:var(--green)}
+.cta h1 em{font-style:normal;color:var(--deep);background:var(--accent);padding:0 18px;border-radius:16px}
+.price{position:relative;margin:50px auto 0;width:780px;border-radius:40px;padding:40px;background:linear-gradient(135deg,#0e5a4f,#0a463e);color:#fff;box-shadow:0 50px 100px -20px rgba(10,70,62,.7)}
+.price .old{font:600 52px/1 var(--body);opacity:.7;text-decoration:line-through;text-decoration-thickness:6px;text-decoration-color:#ff7a62}
+.price .new{font:700 140px/1.05 var(--serif);margin-top:8px}
+.price .new small{font:600 46px var(--body);opacity:.85}
+.price .note{font:600 30px/1.3 var(--body);color:#f3d39c;margin-top:10px}
+.link{margin:44px auto 0;display:inline-block;font:800 54px/1 var(--body);color:var(--green);background:#fff;border:5px solid var(--green);padding:26px 40px;border-radius:999px;box-shadow:0 20px 40px -14px rgba(14,90,79,.5)}
+.ask{margin-top:44px;font:700 46px/1.35 var(--body);color:var(--ink)}
+.ask b{color:#fff;background:#d8452f;padding:4px 18px;border-radius:12px}
+</style>
+</head>
+<body class="preview">
+<div class="ctl">
+  <select id="pick"></select>
+  <button id="play">⏸ Pause</button>
+  <input id="scrub" type="range" min="0" max="1000" value="0">
+  <span id="clock">0.0s</span>
+</div>
+<div class="viewport" id="vp"><div id="reel"></div></div>
+<p class="hint">Preview only. To make the MP4: <code>node render.mjs &lt;id&gt;</code> (see README.md). Instagram covers the bottom and right edge; all text stays inside the safe area.</p>
+<pre class="cap" id="caption"></pre>
+
+<script src="episodes.js"></script>
+<script>
+/* ======================= tiny animation kit ======================= */
+const DUR = 19.5, FPS = 30;
+const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
+const prog = (t, a, b) => clamp((t - a) / (b - a));
+const E = {
+  out: x => 1 - Math.pow(1 - x, 3),
+  in: x => x * x * x,
+  inOut: x => x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2,
+  back: x => { const c = 1.9; return 1 + (c + 1) * Math.pow(x - 1, 3) + c * Math.pow(x - 1, 2); },
+  elastic: x => x === 0 || x === 1 ? x : Math.pow(2, -10 * x) * Math.sin((x * 10 - .75) * (2 * Math.PI / 3)) + 1,
+};
+const lerp = (a, b, k) => a + (b - a) * k;
+const rnd = (s => () => (s = (s * 16807) % 2147483647) / 2147483647)(7);
+const ACC = { saffron: '#e0a03a', coral: '#ff7a5c', mint: '#3ccf9e', sky: '#5ab4f0' };
+const inr = n => Math.round(n).toLocaleString('en-IN');
+const esc = s => s.replace(/[&<>]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]));
+const stars = s => esc(s).replace(/\*(.+?)\*/g, '<span class="hl">$1</span>');
+const $ = (sel, r = document) => r.querySelector(sel);
+const set = (el, tf, op) => { if (!el) return; el.style.transform = tf; if (op !== undefined) el.style.opacity = op; };
+const show = (el, on) => { el.style.display = on ? '' : 'none'; };
+
+/* Scenes (seconds) */
+const S = { hook: [0, 2.9], pain: [2.8, 6.5], phone: [6.4, 12.2], ben: [12.1, 15.6], cta: [15.5, DUR] };
+
+let EP, R = {};
+function build(ep) {
+  EP = ep;
+  const reel = $('#reel');
+  reel.style.setProperty('--accent', ACC[ep.accent] || ACC.saffron);
+  const coins = Array.from({ length: 14 }, () => ({ x: rnd() * 1080, y: rnd() * 1920, z: -200 - rnd() * 1400, s: .5 + rnd() * .8, sp: 40 + rnd() * 80, r: rnd() * 360 }));
+  reel.innerHTML = `
+  <div class="layer bg-dark" id="bgDark"></div>
+  <div class="layer persp"><div class="layer p3d">
+    <div class="floor" id="floor"></div>
+    ${coins.map((c, i) => `<div class="abs coin" data-i="${i}">₹</div>`).join('')}
+  </div></div>
+  <div class="layer bg-paper" id="bgPaper"></div>
+  <div class="layer persp" id="world"><div class="layer p3d" id="cam">
+    <div class="layer p3d" id="scHook">
+      <div class="hook p3d">${ep.hook.map(l => `<span class="hline">${stars(l)}</span>`).join('')}</div>
+      <div class="hsub"><i>${esc(ep.hookSub)}</i></div>
+    </div>
+    <div class="layer p3d" id="scPain">
+      <div class="eyebrow">Sound <em>familiar?</em></div>
+      ${ep.pains.map(([e, t], i) => `<div class="pain" style="top:${560 + i * 300}px"><span class="emo">${e}</span><span class="txt">${esc(t)}</span><span class="x">✕</span></div>`).join('')}
+    </div>
+    <div class="layer p3d" id="scPhone">
+      <div class="sol">Ab <em>FamilyFi</em> hai 👇</div>
+      <div class="phone p3d" id="phone">
+        <div class="slab"></div><div class="edge"></div>
+        <div class="body"><div class="scr"><img src="${ep.screen}" alt=""><div class="notch"></div><div class="glare" id="glare"></div>
+          <div class="ring" id="ring" style="left:16px;top:212px;width:496px;height:180px"></div></div></div>
+      </div>
+      <div class="feat" id="feat"><img src="${ep.feature.img}" alt=""><span class="tag">Real app · sample data</span><div class="lab">${esc(ep.feature.label)}</div></div>
+    </div>
+    <div class="layer p3d" id="scBen">
+      <div class="bwrap">
+        <div class="count"><div class="lbl">${esc(ep.count.label)}</div><div class="num" id="num">0</div></div>
+        ${ep.benefits.map((b, i) => `<div class="tick" style="top:${470 + i * 210}px"><span class="ok">✓</span><span>${esc(b)}</span></div>`).join('')}
+      </div>
+    </div>
+    <div class="layer p3d" id="scCta">
+      <div class="cta">
+        <img class="logo" src="../img/logo.jpg" alt="">
+        <h1>15 din <em>FREE</em> trial</h1>
+        <div class="price p3d" id="price"><div class="old">₹1,499 / year</div><div class="new">₹999 <small>/ year</small></div><div class="note">Launch offer · 31 Dec 2026 tak · ya ₹99 / month</div></div>
+        <div class="link" id="link">${esc(LINK)}</div>
+        <div class="ask" id="ask">Comment karo <b>${esc(ep.keyword)}</b> 👇<br>Save 🔖 karo · Family ko share karo</div>
+      </div>
+    </div>
+  </div></div>
+  <div class="brand" id="brand"><img src="../img/logo.jpg" alt=""><div><b>familyfi</b><br><span>@familyfi.app</span></div></div>
+  <div class="progress" id="bar"></div>`;
+  R = {
+    bgDark: $('#bgDark'), bgPaper: $('#bgPaper'), cam: $('#cam'), floor: $('#floor'), brand: $('#brand'), bar: $('#bar'),
+    coins: [...reel.querySelectorAll('.coin')].map((el, i) => ({ el, ...coins[i] })),
+    scHook: $('#scHook'), lines: [...reel.querySelectorAll('.hline')], hsub: $('.hsub'),
+    scPain: $('#scPain'), eyebrow: $('.eyebrow'), pains: [...reel.querySelectorAll('.pain')],
+    scPhone: $('#scPhone'), sol: $('.sol'), phone: $('#phone'), glare: $('#glare'), ring: $('#ring'), feat: $('#feat'),
+    scBen: $('#scBen'), count: $('.count'), num: $('#num'), ticks: [...reel.querySelectorAll('.tick')],
+    scCta: $('#scCta'), logo: $('.cta .logo'), h1: $('.cta h1'), price: $('#price'), link: $('#link'), ask: $('#ask'),
+  };
+  // fit long hook lines into the safe width (900 px)
+  R.lines.forEach(l => { l.dataset.fit = Math.min(1, 900 / l.scrollWidth); });
+  $('#caption').textContent = ep.caption;
+}
+
+/* ======================= the timeline ======================= */
+function render(t) {
+  const ep = EP;
+  R.bar.style.width = (t / DUR * 100) + '%';
+
+  // background: dark until benefits, then paper (circular wipe)
+  const wipe = E.inOut(prog(t, 12.0, 12.6));
+  R.bgPaper.style.clipPath = `circle(${wipe * 140}% at 50% 45%)`;
+  R.brand.classList.toggle('on-paper', t > 12.3);
+
+  // camera drift (slow 3D parallax) + impact shake
+  const shake = t < 1.6 ? Math.sin(t * 70) * 10 * Math.max(0, 1 - Math.abs(t - .95) * 5) : 0;
+  set(R.cam, `translate3d(${shake}px,${shake * .6}px,0) rotateX(${Math.sin(t * .5) * 2}deg) rotateY(${Math.sin(t * .37) * 3}deg)`);
+
+  // floor grid + coins (dark scenes only)
+  const darkVis = 1 - wipe;
+  R.floor.style.transform = `rotateX(78deg)`;
+  R.floor.style.backgroundPosition = `0 ${t * 260}px`;
+  R.floor.style.opacity = darkVis * .9;
+  for (const c of R.coins) {
+    const y = ((c.y - t * c.sp) % 2200 + 2200) % 2200 - 140;
+    c.el.style.transform = `translate3d(${c.x - 60}px,${y}px,${c.z}px) scale(${c.s}) rotateY(${c.r + t * 120}deg)`;
+    c.el.style.opacity = darkVis * .85;
+  }
+
+  /* ---- 1. HOOK ---- */
+  const [h0, h1] = S.hook; show(R.scHook, t >= h0 && t < h1);
+  if (t < h1) {
+    const out = E.in(prog(t, 2.5, 2.9));
+    R.lines.forEach((l, i) => {
+      const k = prog(t, .05 + i * .28, .5 + i * .28), e = E.back(k);
+      const z = lerp(-1600, 0, E.out(k)) + out * 900;
+      set(l, `translateZ(${z}px) rotateX(${(1 - e) * -40}deg) scale(${l.dataset.fit * (.6 + .4 * e)})`, Math.min(1, k * 3) * (1 - out));
+    });
+    const ks = E.back(prog(t, 1.1, 1.5));
+    set(R.hsub, `translateY(${(1 - ks) * 80}px) scale(${.8 + .2 * ks})`, prog(t, 1.1, 1.3) * (1 - out));
+  }
+
+  /* ---- 2. PAIN ---- */
+  const [p0, p1] = S.pain; show(R.scPain, t >= p0 && t < p1);
+  if (t >= p0 && t < p1) {
+    const out = E.in(prog(t, 6.1, 6.5));
+    const ke = E.back(prog(t, 2.85, 3.25));
+    set(R.eyebrow, `translateZ(${(1 - ke) * -600}px) scale(${.7 + .3 * ke})`, prog(t, 2.85, 3.0) * (1 - out));
+    R.pains.forEach((el, i) => {
+      const k = prog(t, 3.1 + i * .55, 3.75 + i * .55), e = E.back(k);
+      const bob = Math.sin(t * 2.2 + i) * 10;
+      const ry = lerp(80, i % 2 ? 6 : -6, e) + out * (i % 2 ? -90 : 90);
+      set(el, `translate3d(${(1 - E.out(k)) * (i % 2 ? -900 : 900)}px,${bob}px,${lerp(-500, 0, E.out(k)) - out * 400}px) rotateY(${ry}deg) rotateZ(${(i - 1) * -1.5}deg)`, Math.min(1, k * 2.5) * (1 - out));
+      const x = el.querySelector('.x'); const kx = E.elastic(prog(t, 3.55 + i * .55, 4.2 + i * .55));
+      x.style.transform = `scale(${kx})`;
+    });
+  }
+
+  /* ---- 3. PHONE (3D) + feature card ---- */
+  const [f0, f1] = S.phone; show(R.scPhone, t >= f0 && t < f1);
+  if (t >= f0 && t < f1) {
+    const out = E.in(prog(t, 11.85, 12.2));
+    const ks = E.back(prog(t, 6.45, 6.9));
+    set(R.sol, `translateZ(${(1 - ks) * -500}px)`, prog(t, 6.45, 6.6) * (1 - out));
+    const k = E.out(prog(t, 6.5, 7.6));               // phone flies in & spins
+    const kf = E.inOut(prog(t, 8.7, 9.5));            // phone steps back when the card comes out
+    const ry = lerp(-200, -16, k) + Math.sin(t * .9) * 4 + kf * 22;
+    const z = lerp(-1400, 0, k) - kf * 420 - out * 600;
+    const y = kf * -150, x = kf * -40;
+    set(R.phone, `translate3d(${x}px,${y}px,${z}px) rotateX(${lerp(30, 6, k)}deg) rotateY(${ry}deg)`, Math.min(1, prog(t, 6.5, 6.9) * 2) * (1 - out));
+    R.glare.style.transform = `translateX(${lerp(-150, 330, prog(t, 7.3, 8.1))}%) skewX(-18deg)`;
+    const kr = prog(t, 7.7, 8.2), pr = 1 + Math.sin((t - 7.7) * 8) * .03;
+    R.ring.style.opacity = kr * (1 - prog(t, 8.6, 8.8));
+    R.ring.style.transform = `scale(${lerp(1.4, 1, E.out(kr)) * pr})`;
+    // feature card flies OUT of the phone toward the camera
+    const kc = prog(t, 8.8, 9.7), ec = E.back(kc);
+    set(R.feat, `translate3d(${lerp(-60, 0, ec)}px,${lerp(-500, 0, ec) + Math.sin(t * 1.8) * 8}px,${lerp(-500, 200, E.out(kc)) + out * 500}px) rotateX(${lerp(60, 4, ec)}deg) rotateY(${lerp(-30, -6, ec)}deg) scale(${lerp(.3, 1, ec)})`, Math.min(1, kc * 3) * (1 - out));
+  }
+
+  /* ---- 4. BENEFITS (paper) ---- */
+  const [b0, b1] = S.ben; show(R.scBen, t >= b0 && t < b1);
+  if (t >= b0 && t < b1) {
+    const out = E.in(prog(t, 15.25, 15.6));
+    const kc = E.back(prog(t, 12.3, 12.8));
+    set(R.count, `translateZ(${(1 - kc) * -500 - out * 300}px)`, prog(t, 12.3, 12.5) * (1 - out));
+    R.num.textContent = (ep.count.prefix || '') + inr(ep.count.value * E.out(prog(t, 12.4, 13.8)));
+    R.ticks.forEach((el, i) => {
+      const k = prog(t, 13.1 + i * .45, 13.6 + i * .45), e = E.back(k);
+      set(el, `translate3d(0,${(1 - e) * 120}px,${(1 - E.out(k)) * -400}px) rotateX(${(1 - e) * 80}deg)`, Math.min(1, k * 3) * (1 - out));
+    });
+  }
+
+  /* ---- 5. CTA (paper) ---- */
+  const [c0] = S.cta; show(R.scCta, t >= c0);
+  if (t >= c0) {
+    const kl = E.elastic(prog(t, 15.6, 16.4));
+    set(R.logo, `scale(${kl}) rotateY(${(1 - prog(t, 15.6, 16.2)) * 360}deg)`, prog(t, 15.6, 15.8));
+    const kh = E.back(prog(t, 15.9, 16.3));
+    set(R.h1, `translateZ(${(1 - kh) * -700}px)`, prog(t, 15.9, 16.05));
+    const kp = E.back(prog(t, 16.3, 16.9));
+    set(R.price, `rotateX(${(1 - kp) * -95}deg) rotateY(${Math.sin(t * 1.6) * 6}deg)`, prog(t, 16.3, 16.5));
+    const kk = E.back(prog(t, 16.9, 17.3)), pulse = 1 + Math.max(0, Math.sin((t - 17.3) * 6)) * .04 * (t > 17.3);
+    set(R.link, `scale(${kk * pulse})`, prog(t, 16.9, 17.0));
+    const ka = E.out(prog(t, 17.4, 17.8));
+    set(R.ask, `translateY(${(1 - ka) * 60}px)`, ka);
+  }
+}
+
+/* ======================= wiring ======================= */
+const qs = new URLSearchParams(location.search);
+const RENDER = qs.has('render');
+if (RENDER) document.body.className = 'render';
+const pick = $('#pick');
+EPISODES.forEach(e => pick.add(new Option(e.id, e.id)));
+const startId = qs.get('ep') || EPISODES[0].id;
+pick.value = startId;
+
+function waitImages() { return Promise.all([...document.images].map(i => i.complete ? 0 : new Promise(r => { i.onload = i.onerror = r; }))); }
+async function load(id) {
+  build(EPISODES.find(e => e.id === id) || EPISODES[0]);
+  await document.fonts.ready; await waitImages();
+  R.lines.forEach(l => { l.style.transform = ''; l.dataset.fit = Math.min(1, 900 / l.scrollWidth); });
+  render(0);
+}
+window.DURATION = DUR; window.FPS = FPS;
+window.seek = t => { render(t); return true; };
+window.READY = load(startId);
+
+// preview loop + fit to viewport
+function fit() { const vp = $('#vp'); if (!RENDER) $('#reel').style.transform = `scale(${vp.clientWidth / 1080})`; }
+addEventListener('resize', fit); fit();
+if (!RENDER) {
+  let playing = true, t0 = performance.now(), cur = 0;
+  pick.onchange = async () => { await load(pick.value); t0 = performance.now(); cur = 0; };
+  $('#play').onclick = () => { playing = !playing; $('#play').textContent = playing ? '⏸ Pause' : '▶ Play'; t0 = performance.now() - cur * 1000; };
+  $('#scrub').oninput = e => { cur = e.target.value / 1000 * DUR; t0 = performance.now() - cur * 1000; render(cur); };
+  (function loop(now) {
+    if (playing && EP) { cur = ((now - t0) / 1000) % DUR; render(cur); $('#scrub').value = cur / DUR * 1000; }
+    $('#clock').textContent = cur.toFixed(1) + 's';
+    requestAnimationFrame(loop);
+  })(performance.now());
+}
+</script>
+</body>
+</html>
