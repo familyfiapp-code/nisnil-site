@@ -769,5 +769,9 @@ if(typeof gtag==='function')gtag('consent','update',{analytics_storage:c==='yes'
 var f=document.querySelector('footer');var l=document.createElement('button');l.type='button';l.className='nn-ck-link';l.textContent='Cookie settings';l.addEventListener('click',show);
 var w=document.createElement('p');w.style.cssText='margin:12px 0 0;font-size:13px';w.appendChild(l);(f||document.body).appendChild(w);})();
 </script>
-</body>
+<script>/* FamilyFi referral links: ?ref=CODE is kept for 30 days and added to "Start free trial" links */
+(function(){try{var m=location.search.match(/[?&]ref=([A-Za-z0-9]{4,12})/),k='ff-ref',now=Date.now(),v=null;
+if(m){v=m[1].toUpperCase();localStorage.setItem(k,JSON.stringify({c:v,t:now}));}else{var o=JSON.parse(localStorage.getItem(k)||'null');if(o&&now-o.t<30*864e5)v=o.c;}
+if(!v)return;var fix=function(){document.querySelectorAll('a[href*="familyfi.app.nisnil.co.in"],a[href^="/app/"],a[href^="https://nisnil.co.in/app/"]').forEach(function(a){if(a.href.indexOf('ref=')<0)a.href=a.href+(a.href.indexOf('?')<0?'?':'&')+'ref='+v;});};
+fix();document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a');if(a)fix();},true);}catch(e){}})();</script></body>
 </html>

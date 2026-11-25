@@ -212,12 +212,53 @@ try{if(localStorage.getItem('nn_consent')==='yes')gtag('consent','update',{analy
 gtag('js',new Date());gtag('config','G-R91PK86YHW');
 </script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-R91PK86YHW"></script>
-</head>
+<style>
+.g-hero{padding-block:44px 6px}.g-hero h1{font-size:clamp(30px,5.6vw,52px);margin-top:12px}.g-hero p{color:var(--ink-2);margin-top:12px;max-width:44em;font-size:17px}
+.g-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:16px;margin-block:28px 56px}
+.g-card{display:flex;flex-direction:column;gap:8px;background:var(--card);border:1px solid var(--line);border-radius:24px;padding:24px;text-decoration:none;color:inherit;box-shadow:var(--shadow);transition:border-color .15s,transform .15s}
+.g-card:hover{border-color:var(--green);transform:translateY(-2px)}.g-card b{font:600 21px/1.25 Fraunces,Georgia,serif;color:var(--ink)}.g-card span{color:var(--muted);font-size:15px}
+.g-card em{font-style:normal;font:600 14.5px Inter,sans-serif;color:var(--green);margin-top:auto;padding-top:6px}.g-card .ic{width:44px;height:44px;border-radius:14px;background:var(--green-3);color:var(--green);display:grid;place-items:center}.g-card .ic svg{width:22px;height:22px}
+.calc{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:18px;margin-block:26px 28px;align-items:start}
+@media (max-width:860px){.calc{grid-template-columns:1fr}}
+.c-in,.c-out{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:clamp(18px,3vw,28px);box-shadow:var(--shadow);min-width:0}
+.c-in{display:grid;gap:14px}.c-in label{display:grid;gap:6px;font:600 14px Inter,sans-serif;color:var(--ink-2)}
+.c-in label small{font-weight:400;color:var(--muted)}
+.c-in input,.c-in select{font:500 16px Inter,sans-serif;border:1.5px solid var(--line);border-radius:12px;padding:11px 12px;background:#fff;color:var(--ink);width:100%;min-height:46px}
+.c-in input:focus,.c-in select:focus{outline:none;border-color:var(--green);box-shadow:0 0 0 3px rgba(14,90,79,.14)}
+.c-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}@media (max-width:420px){.c-row{grid-template-columns:1fr}}
+.c-big{font:600 clamp(32px,5vw,46px)/1.05 Fraunces,Georgia,serif;color:var(--green)}.c-lbl{font:600 12px Inter,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.c-kv{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:16px 0}.c-kv div{background:var(--paper);border-radius:14px;padding:12px 14px}
+.c-kv b{display:block;font:600 19px/1.2 Fraunces,Georgia,serif;color:var(--ink)}.c-kv span{font-size:13px;color:var(--muted)}
+.c-bar{display:flex;height:14px;border-radius:999px;overflow:hidden;background:var(--paper-2);margin:8px 0 4px}.c-bar i{display:block;height:100%}
+.c-leg{display:flex;gap:14px;flex-wrap:wrap;font-size:13px;color:var(--muted)}.c-leg i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+.c-tbl{overflow-x:auto;margin-top:14px;max-height:340px;overflow-y:auto;border:1px solid var(--line);border-radius:14px}.c-tbl table{border-collapse:collapse;width:100%;font-size:14px}
+.c-tbl th,.c-tbl td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap}.c-tbl th:first-child,.c-tbl td:first-child{text-align:left}
+.c-tbl th{position:sticky;top:0;background:var(--paper);font-weight:600;color:var(--muted);font-size:12.5px}
+.c-cols{display:flex;align-items:flex-end;gap:4px;height:150px;margin-top:14px;padding-bottom:20px;position:relative}.c-cols div{flex:1;display:flex;flex-direction:column;justify-content:flex-end;position:relative;min-width:0}
+.c-cols i{display:block;border-radius:4px 4px 0 0}.c-cols small{position:absolute;bottom:-20px;left:0;right:0;text-align:center;font-size:10.5px;color:var(--muted)}
+.c-note{font-size:13.5px;color:var(--muted);margin-top:12px}.c-warn{background:var(--saffron-2);border:1px solid #f0d9ae;color:#5a3a06;border-radius:14px;padding:12px 14px;font-size:14.5px;margin-top:12px}
+.cta-ff{display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap;background:var(--green);color:#dfece7;border-radius:24px;padding:22px 26px;margin-block:8px 28px}
+.cta-ff b{display:block;color:#fff;font:600 21px/1.25 Fraunces,Georgia,serif}.cta-ff .btn{background:#f3d39c;color:#3d2604}.cta-ff .btn:hover{background:#efc77f}.cta-ff a.l2{color:#fff;font-weight:600;margin-left:14px}
+.prose{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:clamp(20px,4vw,40px);box-shadow:var(--shadow);margin-bottom:56px;font-size:16.5px;line-height:1.75;color:var(--ink-2)}
+.prose h2{font-size:clamp(22px,3vw,28px);margin:26px 0 8px}.prose h2:first-child{margin-top:0}.prose p{margin:10px 0}.prose ul,.prose ol{padding-left:22px}.prose li{margin:6px 0}
+.prose details{border:1px solid var(--line);border-radius:14px;margin:8px 0;padding:10px 14px}.prose summary{cursor:pointer;font-weight:600;color:var(--ink)}
+.story{display:grid;gap:10px;margin:14px 0}.story div{display:flex;gap:10px;align-items:flex-start}.story b{flex:none;width:52px;font:600 13px Inter,sans-serif;color:var(--green);padding-top:3px}
+.story span{background:var(--paper);border-radius:4px 16px 16px 16px;padding:9px 14px}
+.rule{border:2px solid var(--green);border-radius:20px;padding:16px 18px;margin:18px 0;background:var(--green-3)}.rule .c-lbl{color:var(--green)}
+.rule ul{list-style:none;padding:0;margin:10px 0 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px}.rule li{background:#fff;border-radius:12px;padding:10px 12px;margin:0}.rule li b{display:block;color:var(--green);font:600 18px Fraunces,Georgia,serif}
+.meta{color:var(--muted);font-size:14px;margin-top:8px}.fic{font-size:13px;color:var(--muted);border-top:1px solid var(--line);margin-top:22px;padding-top:12px}
+.wa-fab{position:fixed;right:max(16px,env(safe-area-inset-right));bottom:max(16px,env(safe-area-inset-bottom));z-index:40;display:flex;align-items:center;gap:8px;background:#1f8f4e;color:#fff;border-radius:999px;padding:12px 16px;font:600 14.5px Inter,sans-serif;text-decoration:none;box-shadow:0 10px 26px -8px rgba(0,0,0,.4)}
+.wa-fab svg{width:22px;height:22px}.wa-fab:hover{background:#18763f}@media (max-width:760px){.wa-fab span{display:none}.wa-fab{bottom:calc(84px + env(safe-area-inset-bottom,0px))}}
+.band{background:var(--card);border:1px solid var(--line);border-radius:28px;padding:clamp(22px,4vw,36px);margin-block:8px 48px;box-shadow:var(--shadow)}
+.band h2{font-size:clamp(24px,3.6vw,34px)}.ref-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:24px;align-items:center}@media (max-width:760px){.ref-grid{grid-template-columns:1fr}}.band p.s{color:var(--muted);margin-top:6px}
+</style></head>
 <body>
 <div class="ffback"><div class="wrap"><a href="/">← nisnil.co.in</a><span>FamilyFi is a product of Nisnil AI-Finance Solutions</span></div></div>
 <nav class="subnav" aria-label="FamilyFi"><div class="wrap">
-  <a class="pname" href="#top"><img src="/img/logo.jpg" alt="">FamilyFi</a>
-  <a class="l" href="#features">Features</a><a class="l" href="#privacy">Privacy</a><a class="l" href="#plans">Pricing</a><a class="l" href="#help">Help</a><a class="l home" href="/" title="Back to nisnil.co.in">nisnil ↗</a>
+  <a class="pname" href="#top"><svg class="lg-anim" viewBox="0 0 160 160" width="30" height="30" role="img" aria-label="FamilyFi" style="flex:none;display:block"><style>.flb{transform-box:fill-box;transform-origin:bottom;animation:flg .9s cubic-bezier(.2,.8,.2,1) both}.flb2{animation-delay:.15s}.flb3{animation-delay:.3s}.flc{animation:fldr .9s .55s cubic-bezier(.3,1.6,.5,1) both}@keyframes flg{from{transform:scaleY(.1)}to{transform:scaleY(1)}}@keyframes fldr{from{transform:translateY(-60px);opacity:0}to{transform:none;opacity:1}}@media (prefers-reduced-motion:reduce){.lg-anim *{animation:none!important}}</style><rect x="8" y="8" width="144" height="144" rx="36" fill="#0e5a4f"/><path d="M46 116V46h54v14H63v15h31v14H63v27z" fill="#fff"/>
+<rect class="flb flb1" x="74" y="102" width="9" height="14" rx="2" fill="#bfe6dd"/><rect class="flb flb2" x="87" y="93" width="9" height="23" rx="2" fill="#bfe6dd"/><rect class="flb flb3" x="100" y="82" width="9" height="34" rx="2" fill="#fff"/>
+<g class="flc"><circle cx="118" cy="62" r="11" fill="#e0a03a"/><text x="118" y="67" text-anchor="middle" font-family="Figtree,Inter,sans-serif" font-weight="800" font-size="13" fill="#0e5a4f">₹</text></g></svg>FamilyFi</a>
+  <a class="l" href="#features">Features</a><a class="l" href="#privacy">Privacy</a><a class="l" href="#plans">Pricing</a><a class="l" href="#help">Help</a><a class="l" href="/familyfi/demo/">Demo</a><a class="l" href="/familyfi/blog/">Blog</a><a class="l home" href="/" title="Back to nisnil.co.in">nisnil ↗</a>
   <a class="btn btn-pri" data-go="trial" href="#plans">Try free</a>
 </div></nav>
 
@@ -228,7 +269,7 @@ gtag('js',new Date());gtag('config','G-R91PK86YHW');
   <p class="lede">Insurance, loans, investments and everyday spending for the whole family, in one private planner that lives in your own Google Drive.</p>
   <div class="ctas">
     <a class="btn btn-pri" data-go="trial" href="#plans">Start 15-day free trial</a>
-    <button class="lnk" type="button" data-open="start">How to start <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+    <a class="lnk" href="/familyfi/demo/">Try the live demo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a><button class="lnk" type="button" data-open="start">How to start <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
   </div>
   <p class="hnote">No card needed · Phone and laptop · Sign in with Gmail</p>
   <div class="stage"><div class="mock"><div class="mphone"><img src="/img/app_home.jpg" width="600" height="1302" alt="FamilyFi home screen with a sample family"></div><div class="mchip c1"><b>Health cover</b><span>renews in 30 days</span></div><div class="mchip c2"><b>Net worth</b><span>₹41.4 L today</span></div><div class="mchip c3">Sample data</div></div></div>
@@ -281,7 +322,43 @@ gtag('js',new Date());gtag('config','G-R91PK86YHW');
 
 <section id="privacy" style="padding-top:0"><div class="wrap"><div class="priv">
   <h2 class="big">We never see your data.</h2>
-  <p class="lede">Most finance apps keep your data on their servers. FamilyFi doesn’t.</p>
+  <p class="lede">Most finance apps keep your data on their servers. FamilyFi doesn’t.</p><div class="pvx" id="pvx" aria-label="30-second explainer: where your data goes">
+<style>
+.pvx{margin-top:30px;background:rgba(0,0,0,.16);border-radius:26px;padding:clamp(16px,3vw,26px);color:#e7f1ed}
+.pvx-stage{position:relative;height:250px;border-radius:18px;background:#0b3f37;overflow:hidden}
+.pvx-sc{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:clamp(10px,4vw,48px);opacity:0;transform:translateY(12px);transition:opacity .6s,transform .6s;padding:16px}
+.pvx-sc.on{opacity:1;transform:none}
+.pvx-b{width:clamp(78px,16vw,120px);height:clamp(78px,16vw,120px);border-radius:24px;display:grid;place-items:center;text-align:center;font:600 12.5px/1.3 Inter,sans-serif;color:#fff;flex:none}
+.pvx-b svg{width:40%;height:40%;margin:0 auto 4px;display:block}
+.pvx-ph{background:#13231f;border:3px solid #2c5c53}.pvx-dr{background:#e3efe9;color:#0e5a4f}.pvx-sv{background:#6b2a24}.pvx-ok{background:#f3d39c;color:#3d2604}
+.pvx-ln{position:relative;flex:1;max-width:220px;height:6px;border-radius:6px;background:rgba(255,255,255,.15);overflow:hidden}
+.pvx-ln i{position:absolute;top:0;left:-30%;width:30%;height:100%;border-radius:6px;background:#f3d39c}
+.pvx-sc.on .pvx-ln i{animation:pvxf 1.4s linear infinite}.pvx-ln.bad i{background:#f07b6f}
+.pvx-x{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font:700 44px/1 Inter,sans-serif;color:#f07b6f}
+@keyframes pvxf{to{left:100%}}
+.pvx-cap{min-height:52px;margin-top:14px;font:600 clamp(16px,2.2vw,19px)/1.4 Fraunces,Georgia,serif;color:#fff;text-align:center}
+.pvx-bar{display:flex;gap:6px;align-items:center;justify-content:center;margin-top:8px}.pvx-bar span{width:34px;height:4px;border-radius:4px;background:rgba(255,255,255,.2);overflow:hidden}
+.pvx-bar span i{display:block;height:100%;width:0;background:#f3d39c}.pvx-bar span.done i{width:100%}
+.pvx-bar button{margin-left:10px;background:none;border:1px solid rgba(255,255,255,.35);color:#fff;border-radius:999px;padding:4px 12px;font:600 12.5px Inter,sans-serif;cursor:pointer}
+@media (prefers-reduced-motion:reduce){.pvx-sc{transition:none}.pvx-sc.on .pvx-ln i{animation:none;left:35%}}
+</style>
+<div class="pvx-stage">
+ <div class="pvx-sc" data-cap="Most money apps send your details to their own servers."><div class="pvx-b pvx-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg> Your phone</div><div class="pvx-ln bad"><i></i></div><div class="pvx-b pvx-sv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></svg> Their servers</div></div>
+ <div class="pvx-sc" data-cap="FamilyFi saves everything in a folder in your own Google Drive."><div class="pvx-b pvx-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg> Your phone</div><div class="pvx-ln"><i></i></div><div class="pvx-b pvx-dr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg> Your Google Drive</div></div>
+ <div class="pvx-sc" data-cap="Our server only checks your plan from your Gmail address. It never receives your finances."><div class="pvx-b pvx-ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg> Gmail only</div><div class="pvx-ln" style="max-width:120px"><i></i></div><div class="pvx-b pvx-sv" style="position:relative"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></svg> FamilyFi server<span class="pvx-x" aria-hidden="true">✕</span></div></div>
+ <div class="pvx-sc" data-cap="No bank logins. You import a statement or paste a bank SMS yourself."><div class="pvx-b pvx-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg> Bank SMS</div><div class="pvx-ln"><i></i></div><div class="pvx-b pvx-dr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg> Your planner</div></div>
+ <div class="pvx-sc" data-cap="Lock it with a passphrase only you know, with 30 days of backups in your Drive."><div class="pvx-b pvx-ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg> Passphrase lock</div><div class="pvx-b pvx-dr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg> 30 daily backups</div></div>
+</div>
+<div class="pvx-cap" id="pvxCap" aria-live="polite"></div>
+<div class="pvx-bar"><span></span><span></span><span></span><span></span><span></span><button type="button" id="pvxBtn">Pause</button></div>
+<script>(function(){var r=document.getElementById('pvx');if(!r)return;var sc=r.querySelectorAll('.pvx-sc'),bars=r.querySelectorAll('.pvx-bar span'),cap=document.getElementById('pvxCap'),btn=document.getElementById('pvxBtn'),k=-1,t=0,on=true,seen=false,T=6000,last=0;
+bars.forEach(function(b){b.innerHTML='<i></i>'});
+function show(i){k=i%sc.length;sc.forEach(function(s,j){s.classList.toggle('on',j===k)});bars.forEach(function(b,j){b.classList.toggle('done',j<k);b.firstChild.style.width=j<k?'100%':'0'});cap.textContent=sc[k].getAttribute('data-cap');t=0;}
+function tick(now){if(!last)last=now;var d=now-last;last=now;if(on&&seen){t+=d;bars[k].firstChild.style.width=Math.min(100,t/T*100)+'%';if(t>=T)show(k+1);}requestAnimationFrame(tick);}
+show(0);if(matchMedia('(prefers-reduced-motion: reduce)').matches){on=false;btn.textContent='Next';}
+btn.addEventListener('click',function(){if(btn.textContent==='Next'){show(k+1);return;}on=!on;btn.textContent=on?'Pause':'Play';});
+if('IntersectionObserver' in window)new IntersectionObserver(function(e){seen=e[0].isIntersecting;}).observe(r);else seen=true;requestAnimationFrame(tick);})();</script>
+</div>
   <div class="pts">
     <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg><b>Your Google Drive</b><span>Everything is saved in a folder in your own Drive.</span></div>
     <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg><b>No bank logins</b><span>You import statements or paste SMS yourself.</span></div>
@@ -303,11 +380,13 @@ gtag('js',new Date());gtag('config','G-R91PK86YHW');
       <ul><li>Everything in Yearly</li><li>Stop any time</li><li>Switch to yearly later</li></ul>
       <a class="btn btn-sec" data-go="trial" href="#">Start free trial</a><div class="alt"><a href="#" data-go="buy:monthly">Buy monthly</a></div></div>
   </div>
-  <p class="offer" id="offerBar">Launch prices end in <b id="cd">—</b></p>
+  <p class="offer" id="yearSave" style="margin-top:10px;color:var(--green-2)"></p>
+<script>document.addEventListener('DOMContentLoaded',function(){var S=(typeof SITE!=='undefined')?SITE:null;if(!S)return;var live=Date.now()<new Date(S.OFFER_ENDS),y=S.PRICES.yearly[live?1:0],m=S.PRICES.monthly[live?1:0],sv=m*12-y;
+if(sv>0)document.getElementById('yearSave').innerHTML='Yearly saves <b>₹'+sv.toLocaleString('en-IN')+'</b> against 12 monthly payments (₹'+(m*12).toLocaleString('en-IN')+'), about '+Math.round(sv/m)+' months free.';});</script><p class="offer" id="offerBar">Launch prices end in <b id="cd">—</b></p>
   <p class="lede" style="margin-top:14px">Just for yourself, on your phone? <a href="/familyfi-lite/" style="font-weight:600">Try FamilyFi Lite — ₹49 a month ›</a></p>
 </div></section>
 
-<section id="help" style="padding-top:0"><div class="wrap">
+<section id="stories" style="padding-top:0"><div class="wrap"><h2 class="big center">How families use FamilyFi</h2><p class="lede center" style="margin-inline:auto">Examples of everyday use with made-up details. Customer stories will appear here once families share them with us.</p><div class="g-grid" style="margin-bottom:18px"><div class="g-card"><span class="c-lbl">Example · how families use it</span><b>Two incomes, three cards, one place</b><span>A salaried couple imports both bank statements and three credit cards each month. Card bills and due dates are on one screen, so nothing is paid late.</span></div><div class="g-card"><span class="c-lbl">Example · how families use it</span><b>Parents’ insurance, finally sorted</b><span>A family lists every health and term policy with renewal dates. The renewal reminder arrives a month early, and the parents’ cover gap is spotted.</span></div><div class="g-card"><span class="c-lbl">Example · how families use it</span><b>Bonus with a plan</b><span>A family plans a bonus in the Budget before it arrives: emergency fund first, a SIP next, and a share to enjoy.</span></div></div><div class="ctas" style="margin-top:0"><a class="btn btn-sec" href="mailto:familyfi.app@gmail.com?subject=My%20FamilyFi%20story&body=Name%20(as%20you%20want%20it%20shown)%3A%0ACity%3A%0AUsing%20FamilyFi%20since%3A%0AWhat%20changed%20for%20your%20family%3A%0A%0AI%20agree%20that%20FamilyFi%20may%20show%20this%20story%20on%20nisnil.co.in.">Share your story</a></div></div></section><section id="refer" style="padding-top:0"><div class="wrap"><div class="band ref-grid"><div><span class="eyebrow">Invite &amp; earn</span><h2 style="margin-top:10px">Give a friend 1 month free.<br>Get 1 month free.</h2><p class="s">When a friend you invite buys any FamilyFi plan, you both get 30 extra days added to your plans.</p></div><ol class="qs" style="margin:0"><li><b>Get your link</b><span>Open FamilyFi › Home › <b>Give 1 month, get 1 month</b> and copy your link.</span></li><li><b>Your friend starts the free trial</b><span>From your link, with their own Gmail. Nothing to type.</span></li><li><b>They buy a plan, you both get 30 days</b><span>Added automatically within about 15 minutes of their payment.</span></li></ol></div><details style="margin:10px 4px 0;color:var(--muted);font-size:14px"><summary style="cursor:pointer">Referral rules</summary><p style="margin-top:8px">One reward per new customer, for a Gmail that has never had a paid FamilyFi plan. The friend must open FamilyFi from your link (or enter your code) during their free trial. You can earn up to 12 rewards (360 days) a year. Rewards add days to the plan; they are not cash and cannot be exchanged. We may withdraw rewards in case of misuse, such as self-referrals with extra accounts.</p></details></div></section><section id="help" style="padding-top:0"><div class="wrap">
   <h2 class="big center">Help when you need it.</h2>
   <div class="help">
     <button class="tile" type="button" data-open="start"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></span><b>Quick start</b><span class="d">Your first 10 minutes, step by step.</span><em><i>Open </i>›</em></button>
@@ -529,5 +608,10 @@ if(typeof gtag==='function')gtag('consent','update',{analytics_storage:c==='yes'
 var f=document.querySelector('footer');var l=document.createElement('button');l.type='button';l.className='nn-ck-link';l.textContent='Cookie settings';l.addEventListener('click',show);
 var w=document.createElement('p');w.style.cssText='margin:12px 0 0;font-size:13px';w.appendChild(l);(f||document.body).appendChild(w);})();
 </script>
-</body>
+<script>/* FamilyFi referral links: ?ref=CODE is kept for 30 days and added to "Start free trial" links */
+(function(){try{var m=location.search.match(/[?&]ref=([A-Za-z0-9]{4,12})/),k='ff-ref',now=Date.now(),v=null;
+if(m){v=m[1].toUpperCase();localStorage.setItem(k,JSON.stringify({c:v,t:now}));}else{var o=JSON.parse(localStorage.getItem(k)||'null');if(o&&now-o.t<30*864e5)v=o.c;}
+if(!v)return;var fix=function(){document.querySelectorAll('a[href*="familyfi.app.nisnil.co.in"],a[href^="/app/"],a[href^="https://nisnil.co.in/app/"]').forEach(function(a){if(a.href.indexOf('ref=')<0)a.href=a.href+(a.href.indexOf('?')<0?'?':'&')+'ref='+v;});};
+fix();document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a');if(a)fix();},true);}catch(e){}})();</script><script>/* animated logos: play once on load, replay on hover/tap */
+document.addEventListener('mouseover',function(e){var s=e.target.closest&&e.target.closest('a,div');if(!s||(e.relatedTarget&&s.contains(e.relatedTarget)))return;var g=s.querySelector(':scope > svg.lg-anim');if(!g||g._busy)return;var n=g.cloneNode(true);n._busy=1;g.replaceWith(n);setTimeout(function(){n._busy=0},2500);});</script></body>
 </html>

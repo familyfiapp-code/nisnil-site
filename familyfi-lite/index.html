@@ -235,7 +235,9 @@ gtag('js',new Date());gtag('config','G-R91PK86YHW');
 <body>
 <div class="ffback"><div class="wrap"><a href="/">← nisnil.co.in</a><span>FamilyFi is a product of Nisnil AI-Finance Solutions</span></div></div>
 <nav class="subnav" aria-label="FamilyFi Lite"><div class="wrap">
-  <a class="pname" href="#top"><img src="/img/logo.jpg" alt="">FamilyFi Lite</a>
+  <a class="pname" href="#top"><svg class="lg-anim" viewBox="0 0 160 160" width="30" height="30" role="img" aria-label="FamilyFi" style="flex:none;display:block"><style>.flb{transform-box:fill-box;transform-origin:bottom;animation:flg .9s cubic-bezier(.2,.8,.2,1) both}.flb2{animation-delay:.15s}.flb3{animation-delay:.3s}.flc{animation:fldr .9s .55s cubic-bezier(.3,1.6,.5,1) both}@keyframes flg{from{transform:scaleY(.1)}to{transform:scaleY(1)}}@keyframes fldr{from{transform:translateY(-60px);opacity:0}to{transform:none;opacity:1}}@media (prefers-reduced-motion:reduce){.lg-anim *{animation:none!important}}</style><rect x="8" y="8" width="144" height="144" rx="36" fill="#0e5a4f"/><path d="M46 116V46h54v14H63v15h31v14H63v27z" fill="#fff"/>
+<rect class="flb flb1" x="74" y="102" width="9" height="14" rx="2" fill="#bfe6dd"/><rect class="flb flb2" x="87" y="93" width="9" height="23" rx="2" fill="#bfe6dd"/><rect class="flb flb3" x="100" y="82" width="9" height="34" rx="2" fill="#fff"/>
+<g class="flc"><circle cx="118" cy="62" r="11" fill="#e0a03a"/><text x="118" y="67" text-anchor="middle" font-family="Figtree,Inter,sans-serif" font-weight="800" font-size="13" fill="#0e5a4f">₹</text></g></svg>FamilyFi Lite</a>
   <a class="l" href="#features">Features</a><a class="l" href="#plans">Pricing</a><a class="l" href="#upgrade">Upgrade</a><a class="l" href="#faq">Questions</a><a class="l home" href="/" title="Back to nisnil.co.in">nisnil ↗</a>
   <a class="btn btn-pri" data-go="trial" href="#plans">Try free</a>
 </div></nav>
@@ -368,5 +370,10 @@ if(typeof gtag==='function')gtag('consent','update',{analytics_storage:c==='yes'
 var f=document.querySelector('footer');var l=document.createElement('button');l.type='button';l.className='nn-ck-link';l.textContent='Cookie settings';l.addEventListener('click',show);
 var w=document.createElement('p');w.style.cssText='margin:12px 0 0;font-size:13px';w.appendChild(l);(f||document.body).appendChild(w);})();
 </script>
-</body>
+<script>/* FamilyFi referral links: ?ref=CODE is kept for 30 days and added to "Start free trial" links */
+(function(){try{var m=location.search.match(/[?&]ref=([A-Za-z0-9]{4,12})/),k='ff-ref',now=Date.now(),v=null;
+if(m){v=m[1].toUpperCase();localStorage.setItem(k,JSON.stringify({c:v,t:now}));}else{var o=JSON.parse(localStorage.getItem(k)||'null');if(o&&now-o.t<30*864e5)v=o.c;}
+if(!v)return;var fix=function(){document.querySelectorAll('a[href*="familyfi.app.nisnil.co.in"],a[href^="/app/"],a[href^="https://nisnil.co.in/app/"]').forEach(function(a){if(a.href.indexOf('ref=')<0)a.href=a.href+(a.href.indexOf('?')<0?'?':'&')+'ref='+v;});};
+fix();document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a');if(a)fix();},true);}catch(e){}})();</script><script>/* animated logos: play once on load, replay on hover/tap */
+document.addEventListener('mouseover',function(e){var s=e.target.closest&&e.target.closest('a,div');if(!s||(e.relatedTarget&&s.contains(e.relatedTarget)))return;var g=s.querySelector(':scope > svg.lg-anim');if(!g||g._busy)return;var n=g.cloneNode(true);n._busy=1;g.replaceWith(n);setTimeout(function(){n._busy=0},2500);});</script></body>
 </html>
