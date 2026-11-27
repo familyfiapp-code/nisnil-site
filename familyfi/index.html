@@ -287,6 +287,11 @@ gtag('js',new Date());gtag('config','G-R91PK86YHW');
     <div class="arrows"><button type="button" aria-label="Previous" data-rail="-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button><button type="button" aria-label="Next" data-rail="1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button></div>
   </div>
   <div class="rail" id="rail">
+    <article class="card"><small>Smart checks <span class="new">NEW</span></small><h3>Watch the planner do the checking.</h3>
+      <div class="pic"><img src="/img/health.jpg" width="720" height="880" alt="Money health check scoring six areas out of 100" loading="lazy"></div>
+      <button class="plus" type="button" aria-label="More about smart checks"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
+      <div class="more"><p class="fsub">A score out of 100 for your family’s money, worked out on your own device, with the one thing to fix first.</p>
+        <ul><li><b>Money health check:</b> emergency fund, EMIs, life and health cover, card use and savings rate.</li><li><b>Last month’s recap:</b> income, spending, savings and what is coming up, ready to share with the family as a picture.</li><li>Statement import shows each step: rows read, auto-tagged, duplicates skipped, premiums matched.</li><li>Insurance premiums found in your transactions are marked paid automatically.</li></ul></div></article>
     <article class="card"><small>Insurance</small><h3>Every renewal, before it’s due.</h3>
       <div class="pic"><img src="/img/renew.jpg" width="720" height="801" alt="Renewal calendar" loading="lazy"></div>
       <button class="plus" type="button" aria-label="More about insurance"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
@@ -295,7 +300,7 @@ gtag('js',new Date());gtag('config','G-R91PK86YHW');
     <article class="card"><small>Spending <span class="new">NEW</span></small><h3>Paste a bank SMS. It’s recorded.</h3>
       <div class="pic"><img src="/img/sms.jpg" width="720" height="450" alt="Add a spend from a bank SMS" loading="lazy"></div>
       <button class="plus" type="button" aria-label="More about spending"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
-      <div class="more"><p class="fsub">No statement yet? Paste the debit SMS. The account is found from its last 4 digits.</p>
+      <div class="more"><p class="fsub">No statement yet? Paste the debit SMS. The amount, account, shop, date and narration are filled in for you.</p>
         <ul><li>Import bank and card statements: Excel, CSV or PDF (password PDFs work).</li><li>Entries tag themselves from your history.</li><li>The statement later replaces SMS entries, so nothing is counted twice.</li><li>Card payments and transfers between your own accounts never count as spending.</li></ul></div></article>
     <article class="card"><small>Loans</small><h3>Know what your loan really costs.</h3>
       <div class="pic fit"><img src="/img/loan.jpg" width="696" height="230" alt="Interest still to pay on a home loan" loading="lazy"></div>
@@ -452,7 +457,7 @@ if(sv>0)document.getElementById('yearSave').innerHTML='Yearly saves <b>₹'+sv.t
         <li>Open <span class="path">My accounts › edit account</span> and type the <b>last 4 digits</b> of each account and card.</li></ol>
         <p style="color:var(--muted)">Want to look around first? Tap <b>Explore with sample data</b>, and clear it later under <span class="path">Accounts &amp; categories › Planner</span>.</p></div></details>
       <details id="m4"><summary><span class="n">4</span>A tour of the screens</summary><div class="in"><div class="tbl"><table><tbody>
-        <tr><td>Home</td><td>Net worth, this month’s income and spending, bills and renewals needing attention.</td></tr>
+        <tr><td>Home</td><td>Net worth, this month’s income and spending, bills and renewals needing attention; <b>▶ Money health check</b> and <b>▶ Last month’s recap</b>.</td></tr>
         <tr><td>Transactions &amp; Import</td><td>Every entry with filters; import statements, add from SMS, record transfers, clear <i>To review</i>.</td></tr>
         <tr><td>Budget · Compare · Trends</td><td>Monthly budget grid, month-to-month comparison and a heatmap of rising expenses.</td></tr>
         <tr><td>Plan &amp; funds · Cards</td><td>What is still to come this month, 12-month funds, card cycles and due dates.</td></tr>
@@ -467,7 +472,7 @@ if(sv>0)document.getElementById('yearSave').innerHTML='Yearly saves <b>₹'+sv.t
           <li>Review the rows. Rows already recorded are skipped, so overlapping statements never double count.</li>
           <li>Tap <b>Import</b>. Untagged rows wait under <span class="path">Transactions › Show: To review</span>.</li></ol>
         <h4>B. Add from a bank SMS (10 seconds)</h4><ol>
-          <li>Copy the debit or credit SMS, open <b>Transactions → ✉ Add from SMS</b> and paste.</li>
+          <li>Copy the debit or credit SMS, open <b>Transactions → ✉ Add from SMS</b> and paste. The planner highlights what it read: amount, account, shop, date and the narration, which is written into the entry for you.</li>
           <li>Check and tap <b>Add this SMS</b>. The statement line later replaces it, so nothing counts twice.</li></ol>
         <h4>C. Transfers</h4><p>Card bill payments, bank-to-bank transfers and cash withdrawals are not spending. Use <b>⇄ Transfer between accounts</b>, or tag a row <b>Card Payment</b> or <b>Bank Transfer</b>.</p>
         <h4>D. Cash and one-off entries</h4><p>Use <b>Add transaction</b>. A row with the wrong sign can be flipped with <b>⇄</b>.</p></div></details>
@@ -494,7 +499,8 @@ if(sv>0)document.getElementById('yearSave').innerHTML='Yearly saves <b>₹'+sv.t
         <li>Choose Monthly or Yearly before the trial ends and pay with the same Gmail. Renewing early never loses days.</li>
         <li>If a plan ends, your data stays safe in your Drive and opens again when you renew.</li>
         <li><b>Spouse or family:</b> open familyfi.app.nisnil.co.in on any device and sign in with the same Google account.</li>
-        <li>“<b>Changed on another device</b>”: tap <b>Reload latest</b>.</li></ul></div></details>
+        <li>“<b>Changed on another device</b>”: tap <b>Reload latest</b>.</li>
+        <li><b>Sign out:</b> tap the round letter button at the top (next to Save) › <b>Sign out</b>. Always do this on a shared or office computer; your data stays safe in your Drive.</li></ul></div></details>
       <details id="m11"><summary><span class="n">11</span>Your first-week checklist</summary><div class="in"><ul class="check">
         <li>Day 1 · Create the planner and add all accounts with last 4 digits</li>
         <li>Day 1 · Import one statement for your main bank account</li>
@@ -518,6 +524,7 @@ if(sv>0)document.getElementById('yearSave').innerHTML='Yearly saves <b>₹'+sv.t
     <details><summary>Does it work on my phone?</summary><div class="in">Yes. FamilyFi works in any phone or laptop browser, with the same data everywhere. Use “Add to Home screen” to open it like an app.</div></details>
     <details><summary>What happens after the 15-day trial?</summary><div class="in">Choose Monthly or Yearly to continue. If you don’t, the app pauses and your data stays safely in your Drive for when you come back.</div></details>
     <details><summary>Can my spouse use it too?</summary><div class="in">Yes. The planner is built for the whole family: members, their policies, investments and accounts. One plan covers one Google account; use the same login on your spouse’s phone, or ask us about a second account.</div></details>
+    <details><summary>How do I sign out on a shared computer?</summary><div class="in">Tap the round letter button at the top of the app (next to Save) › <b>Sign out</b>. It saves your last changes to Drive, removes the copy kept in that browser and signs you out of FamilyFi.</div></details>
     <details><summary>How do I pay?</summary><div class="in">Securely through Razorpay: UPI, cards, net banking or wallets. Use the Gmail you use for FamilyFi. See <a href="/refund/">refund policy</a>.</div></details>
     <details><summary>Is this investment advice?</summary><div class="in">No. The planner organises and calculates your own information. It does not recommend products, returns or tax decisions.</div></details>
   </div></div>
